@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/altin-doviz-fiyatlari/static/css/main.6fb5d63d.chunk.css",
-    "main.js": "/altin-doviz-fiyatlari/static/js/main.45a6ffa0.chunk.js",
+    "main.js": "/altin-doviz-fiyatlari/static/js/main.de633ede.chunk.js",
     "runtime-main.js": "/altin-doviz-fiyatlari/static/js/runtime-main.e277b3a0.js",
-    "static/js/2.742fa743.chunk.js": "/altin-doviz-fiyatlari/static/js/2.742fa743.chunk.js",
+    "static/js/2.5b00f60a.chunk.js": "/altin-doviz-fiyatlari/static/js/2.5b00f60a.chunk.js",
     "index.html": "/altin-doviz-fiyatlari/index.html",
     "service-worker.js": "/altin-doviz-fiyatlari/service-worker.js",
-    "static/js/2.742fa743.chunk.js.LICENSE.txt": "/altin-doviz-fiyatlari/static/js/2.742fa743.chunk.js.LICENSE.txt"
+    "static/js/2.5b00f60a.chunk.js.LICENSE.txt": "/altin-doviz-fiyatlari/static/js/2.5b00f60a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e277b3a0.js",
-    "static/js/2.742fa743.chunk.js",
+    "static/js/2.5b00f60a.chunk.js",
     "static/css/main.6fb5d63d.chunk.css",
-    "static/js/main.45a6ffa0.chunk.js"
+    "static/js/main.de633ede.chunk.js"
   ]
 }
