@@ -11,3 +11,7 @@ body {
 .card {
   box-shadow: 0 0 5px #aaa;
 }
+
+.card-header {
+  padding: 0.5rem 0.5rem;
+}
