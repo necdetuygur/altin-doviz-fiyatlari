@@ -16,13 +16,13 @@ const App = (props: any) => {
     <div className="container-fluid mt-3">
       <Header />
       <div className="row">
-        <div className="col">
+        <div className="col-md-4">
           <Altin {...props.gold} />
         </div>
-        <div className="col">
+        <div className="col-md-4">
           <Doviz {...props.gold} />
         </div>
-        <div className="col">
+        <div className="col-md-4">
           <Ikd data={props.gold.ikd} />
         </div>
       </div>
