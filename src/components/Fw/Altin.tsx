@@ -6,7 +6,7 @@ const FwAltin = ({
   gram,
   ceyrek,
   yarim,
-  tam
+  tam,
 }: {
   gram: any;
   ceyrek: any;
@@ -14,7 +14,7 @@ const FwAltin = ({
   tam: any;
 }) => (
   <Card title="Altın Fiyatları" icon="/img/apple-touch-icon-152x152.png">
-    <Table hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
+    <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
       <tbody>
         <tr>
           <td></td>

@@ -5,11 +5,11 @@
 /* reactstrap modal */
 body {
   padding-right: 0 !important;
-  background: #f1f1f1;
+  /* background: #f1f1f1; */
 }
 
 .card {
-  box-shadow: 0 0 5px #aaa;
+  /* box-shadow: 0 0 5px #aaa; */
 }
 
 .card-header {

@@ -12,7 +12,7 @@ const CustomTable = (props: any) => {
     }
   };
   return (
-    <Table hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
+    <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
       <tbody>
         {props.data &&
           Object.keys(props.data).map((key: any, index: number) => {
@@ -32,7 +32,10 @@ const CustomTable = (props: any) => {
 
 const Ikd = (props: any) => {
   return (
-    <Card title="İzmir Kuyumcular Odası Altın Fiyatları" icon="/img/apple-touch-icon-152x152.png">
+    <Card
+      title="İzmir Kuyumcular Odası Altın Fiyatları"
+      icon="/img/apple-touch-icon-152x152.png"
+    >
       <CustomTable {...props} modalOpened={false} />
     </Card>
   );

@@ -17,7 +17,7 @@ const Row = ({
   GununEnDusukDegeri,
   GununEnYuksekDegeri,
   YarinkiBeklentiOy,
-  YarinkiBeklentiTahmin
+  YarinkiBeklentiTahmin,
 }: {
   setModalOpen: Function;
   setModalTitle: Function;
@@ -40,46 +40,47 @@ const Row = ({
         setModalTitle(Tip + " Detayları");
         setModalBody(
           <div>
-          <Table
-            hover
-            responsive
-            style={{ cursor: "pointer", marginBottom: 0 }}
-          >
-            <tbody>
-              <tr>
-                <td>Alış</td>
-                <td className="text-end">{Alis}</td>
-              </tr>
-              <tr>
-                <td>Satış</td>
-                <td className="text-end">{Satis}</td>
-              </tr>
-              <tr>
-                <td>Fark</td>
-                <td className="text-end">{Fark}</td>
-              </tr>
-              <tr>
-                <td>Önceki Kapanış</td>
-                <td className="text-end">{OncekiKapanis}</td>
-              </tr>
-              <tr>
-                <td>Günün En Düşük Değeri</td>
-                <td className="text-end">{GununEnDusukDegeri}</td>
-              </tr>
-              <tr>
-                <td>Günün En Yüksek Değeri</td>
-                <td className="text-end">{GununEnYuksekDegeri}</td>
-              </tr>
-              <tr>
-                <td>Yarınki Beklenti Oy</td>
-                <td className="text-end">{YarinkiBeklentiOy}</td>
-              </tr>
-              <tr>
-                <td>Yarınki Beklenti Tahmin</td>
-                <td className="text-end">{YarinkiBeklentiTahmin}</td>
-              </tr>
-            </tbody>
-          </Table>
+            <Table
+              dark
+              hover
+              responsive
+              style={{ cursor: "pointer", marginBottom: 0 }}
+            >
+              <tbody>
+                <tr>
+                  <td>Alış</td>
+                  <td className="text-end">{Alis}</td>
+                </tr>
+                <tr>
+                  <td>Satış</td>
+                  <td className="text-end">{Satis}</td>
+                </tr>
+                <tr>
+                  <td>Fark</td>
+                  <td className="text-end">{Fark}</td>
+                </tr>
+                <tr>
+                  <td>Önceki Kapanış</td>
+                  <td className="text-end">{OncekiKapanis}</td>
+                </tr>
+                <tr>
+                  <td>Günün En Düşük Değeri</td>
+                  <td className="text-end">{GununEnDusukDegeri}</td>
+                </tr>
+                <tr>
+                  <td>Günün En Yüksek Değeri</td>
+                  <td className="text-end">{GununEnYuksekDegeri}</td>
+                </tr>
+                <tr>
+                  <td>Yarınki Beklenti Oy</td>
+                  <td className="text-end">{YarinkiBeklentiOy}</td>
+                </tr>
+                <tr>
+                  <td>Yarınki Beklenti Tahmin</td>
+                  <td className="text-end">{YarinkiBeklentiTahmin}</td>
+                </tr>
+              </tbody>
+            </Table>
           </div>
         );
       }}

@@ -4,7 +4,6 @@ import Altin from "./components/Fw/Altin";
 import Doviz from "./components/Fw/Doviz";
 import Ikd from "./components/Ikd";
 import Modal from "./components/Modal";
-import "./style.css";
 import { getGold } from "./actions";
 
 const App = (props: any) => {
@@ -36,7 +35,7 @@ export default connect(
   (state: { isLoading: boolean; gold: Object }) => {
     return {
       isLoading: state.isLoading,
-      gold: state.gold
+      gold: state.gold,
     };
   },
   { getGold }

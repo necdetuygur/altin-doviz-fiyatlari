@@ -4,7 +4,7 @@ import Row from "./Row";
 
 const FwDoviz = ({ usd, eur, gbp }: { usd: any; eur: any; gbp: any }) => (
   <Card title="Döviz Fiyatları" icon="/img/doviz.png">
-    <Table hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
+    <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
       <tbody>
         <tr>
           <td></td>

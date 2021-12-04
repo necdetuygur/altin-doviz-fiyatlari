@@ -8,7 +8,7 @@ const Modal = (props: any) => {
   return (
     <BsModal toggle={modalToggle} isOpen={props.modalOpen}>
       <ModalHeader toggle={modalToggle}>{props.modalTitle}</ModalHeader>
-      <ModalBody className="p-1">{props.modalBody}</ModalBody>
+      <ModalBody className="p-0">{props.modalBody}</ModalBody>
     </BsModal>
   );
 };
