@@ -10,6 +10,8 @@ body {
 
 .card {
   /* box-shadow: 0 0 5px #aaa; */
+  background-color: rgb(15 37 55 / 75%);
+  border-bottom: 1px solid #0f2537;
 }
 
 .card-header {
