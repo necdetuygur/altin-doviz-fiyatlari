@@ -1,0 +1,9 @@
+* {
+  font-family: Ubuntu;
+}
+
+/* reactstrap modal */
+body {
+  padding-right: 0 !important;
+  background: #e9e9e9;
+}
