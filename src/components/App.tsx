@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
-import Altin from "./components/Fw/Altin";
-import Doviz from "./components/Fw/Doviz";
-import Ikd from "./components/Ikd";
-import Modal from "./components/Modal";
-import { getGold } from "./actions";
+import Altin from "./Fw/Altin";
+import Doviz from "./Fw/Doviz";
+import Ikd from "./Ikd";
+import Modal from "./Modal";
+import { getGold } from "../actions";
 
 const App = (props: any) => {
   useEffect(() => {
