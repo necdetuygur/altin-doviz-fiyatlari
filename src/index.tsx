@@ -3,9 +3,9 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { reducer } from "./reducers";
 import thunk from "redux-thunk";
-import "./superhero.css";
-import "./style.css";
-import App from "./App";
+import "./css/superhero.css";
+import "./css/style.css";
+import App from "./components/App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const store = createStore(reducer, applyMiddleware(thunk));
