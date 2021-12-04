@@ -1,4 +1,5 @@
 import Card from "./Card";
+import Loading from "./Loading";
 import { Table } from "reactstrap";
 import { connect } from "react-redux";
 import { setModalOpen, setModalTitle, setModalBody } from "../actions";
@@ -36,7 +37,13 @@ const Ikd = (props: any) => {
       title="İzmir Kuyumcular Odası Altın Fiyatları"
       icon="/img/apple-touch-icon-152x152.png"
     >
-      <CustomTable {...props} modalOpened={false} />
+      {props.data ? (
+        <CustomTable {...props} modalOpened={false} />
+      ) : (
+        <div className="text-center p-3">
+          <Loading width="19" />
+        </div>
+      )}
     </Card>
   );
 };

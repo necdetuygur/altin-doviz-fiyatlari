@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import { setModalOpen, setModalTitle, setModalBody } from "../../actions";
 import { Table } from "reactstrap";
 import Loading from "../Loading";
-import Ikd from "../Ikd";
 
 const Row = ({
   setModalOpen,
@@ -86,10 +85,16 @@ const Row = ({
       }}
     >
       <td className="text-start">{Tip}</td>
-      <td>{Alis || <Loading width="16" />}</td>
-      <td>{Satis || <Loading width="16" />}</td>
+      <td>{Alis || <Loading width="19" />}</td>
+      <td>{Satis || <Loading width="19" />}</td>
       <td className="text-end">
-        {YarinkiBeklentiTahmin || <Loading width="16" />}
+        {YarinkiBeklentiTahmin ? (
+          <button className="btn btn-sm btn-dark">
+            {YarinkiBeklentiTahmin}
+          </button>
+        ) : (
+          <Loading width="19" />
+        )}
       </td>
     </tr>
   );

@@ -22,11 +22,9 @@ const App = (props: any) => {
         <div className="col">
           <Doviz {...props.gold} />
         </div>
-        {props.gold.ikd && (
-          <div className="col">
-            <Ikd data={props.gold.ikd} />
-          </div>
-        )}
+        <div className="col">
+          <Ikd data={props.gold.ikd} />
+        </div>
       </div>
       <Modal />
     </div>
