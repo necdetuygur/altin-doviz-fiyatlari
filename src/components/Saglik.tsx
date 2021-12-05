@@ -3,22 +3,25 @@ import { Table } from "reactstrap";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 
-const initialHostsState: {
-  [key: string]: string;
-} = {
-  "https://thegold1.herokuapp.com/": "0",
-  "https://thegold2.herokuapp.com/": "0",
-  "https://thegold3.herokuapp.com/": "0",
-  "https://thegold4.herokuapp.com/": "0",
-  "https://thegold5.herokuapp.com/": "0",
-  "https://thegold6.herokuapp.com/": "0",
-  "https://thegold7.herokuapp.com/": "0",
-  "https://thegold8.herokuapp.com/": "0",
-  "https://thegold9.herokuapp.com/": "0",
-  "https://thegold10.herokuapp.com/": "0",
-  "https://thegold11.herokuapp.com/": "0",
-  "https://thegold12.herokuapp.com/": "0",
-  "https://thegold13.herokuapp.com/": "0",
+const initialHostsState = () => {
+  const temp: {
+    [key: string]: string;
+  } = {
+    "https://thegold1.herokuapp.com/": "0",
+    "https://thegold2.herokuapp.com/": "0",
+    "https://thegold3.herokuapp.com/": "0",
+    "https://thegold4.herokuapp.com/": "0",
+    "https://thegold5.herokuapp.com/": "0",
+    "https://thegold6.herokuapp.com/": "0",
+    "https://thegold7.herokuapp.com/": "0",
+    "https://thegold8.herokuapp.com/": "0",
+    "https://thegold9.herokuapp.com/": "0",
+    "https://thegold10.herokuapp.com/": "0",
+    "https://thegold11.herokuapp.com/": "0",
+    "https://thegold12.herokuapp.com/": "0",
+    "https://thegold13.herokuapp.com/": "0",
+  };
+  return temp;
 };
 
 function Row({ a, b, c }: { a: string; b: string; c: string }) {
@@ -41,7 +44,7 @@ function Row({ a, b, c }: { a: string; b: string; c: string }) {
 }
 
 export default function Saglik() {
-  const [hosts, setHosts] = useState(initialHostsState);
+  const [hosts, setHosts] = useState(initialHostsState());
 
   const useForceUpdate = () => {
     const [value, setValue] = useState(0);
@@ -66,8 +69,10 @@ export default function Saglik() {
   }
 
   function main() {
-    setHosts(initialHostsState);
-    SetStatus();
+    setHosts(initialHostsState());
+    setTimeout(() => {
+      SetStatus();
+    }, 1e3);
   }
 
   useEffect(() => {
@@ -82,6 +87,7 @@ export default function Saglik() {
           const v: string = hosts[k];
           return (
             <Row
+              key={k}
               a={k}
               b={v !== "0" ? "success" : "danger"}
               c={
