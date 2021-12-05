@@ -16,6 +16,13 @@ export const getGold = () => (dispatch: Dispatch) => {
     "fw/doviz/gbp",
   ];
   paths.forEach(function (path) {
+    dispatch({
+      type: "GET_GOLD_SUCCESS",
+      payload: {
+        data: null,
+        path: path === "ikd" ? path : path.split("/")[2],
+      },
+    });
     axios.get(getBaseUrl() + path).then((r) =>
       dispatch({
         type: "GET_GOLD_SUCCESS",
