@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <title>Bildirim</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="container">
+    <form action="send" class="mt-5">
+      <?NotificationIsSent?>
+      <table class="table table-bordered">
+        <tr>
+          <td>Başlık:</td>
+          <td>
+            <input
+              type="text"
+              name="title"
+              class="form-control"
+              value="<?NotificationTitle?>"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>İçerik:</td>
+          <td>
+            <textarea name="body" style="width: 100%;" class="form-control">
+<?NotificationBody?></textarea
+            >
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="Gönder" class="btn btn-primary" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
