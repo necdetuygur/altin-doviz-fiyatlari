@@ -22,10 +22,10 @@ const FwAltin = ({
           <td>Satış</td>
           <td className="text-end">Tahmin</td>
         </tr>
-        <Row {...gram} Tip="Gram" />
-        <Row {...ceyrek} Tip="Çeyrek" />
-        <Row {...yarim} Tip="Yarım" />
-        <Row {...tam} Tip="Tam" />
+        <Row {...gram} TipShort="Gram" TipLong="Gram Altın" />
+        <Row {...ceyrek} TipShort="Çeyrek" TipLong="Çeyrek Altın" />
+        <Row {...yarim} TipShort="Yarım" TipLong="Yarım Altın" />
+        <Row {...tam} TipShort="Tam" TipLong="Tam Altın" />
       </tbody>
     </Table>
   </Card>

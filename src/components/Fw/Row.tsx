@@ -8,7 +8,8 @@ const Row = ({
   setModalTitle,
   setModalBody,
 
-  Tip,
+  TipShort,
+  TipLong,
   Alis,
   Satis,
   Fark,
@@ -22,7 +23,8 @@ const Row = ({
   setModalTitle: Function;
   setModalBody: Function;
 
-  Tip: string;
+  TipShort: string;
+  TipLong: string;
   Alis: string;
   Satis: string;
   Fark: string;
@@ -36,7 +38,7 @@ const Row = ({
     <tr
       onClick={() => {
         setModalOpen(true);
-        setModalTitle(Tip + " Detayları");
+        setModalTitle(TipLong + " Detayları");
         setModalBody(
           <div>
             <Table
@@ -84,7 +86,7 @@ const Row = ({
         );
       }}
     >
-      <td className="text-start">{Tip}</td>
+      <td className="text-start">{TipShort}</td>
       <td>{Alis || <Loading width="19" />}</td>
       <td>{Satis || <Loading width="19" />}</td>
       <td className="text-end">

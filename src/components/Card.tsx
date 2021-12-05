@@ -11,7 +11,7 @@ export default ({
     <div className="card-header">
       <img width="33" src={process.env.PUBLIC_URL + icon} alt="" />
       &nbsp;
-      <span className="ms-2">{title}</span>
+      <span className="ms-1">{title}</span>
     </div>
     <div className="card-body p-0">{children}</div>
   </div>

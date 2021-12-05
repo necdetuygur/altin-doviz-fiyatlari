@@ -12,9 +12,9 @@ const FwDoviz = ({ usd, eur, gbp }: { usd: any; eur: any; gbp: any }) => (
           <td>Satış</td>
           <td className="text-end">Tahmin</td>
         </tr>
-        <Row {...usd} Tip="Dolar" />
-        <Row {...eur} Tip="Euro" />
-        <Row {...gbp} Tip="Sterlin" />
+        <Row {...usd} TipShort="USD" TipLong="Dolar (USD)" />
+        <Row {...eur} TipShort="EUR" TipLong="Euro (EUR)" />
+        <Row {...gbp} TipShort="GBP" TipLong="Sterlin (GBP)" />
       </tbody>
     </Table>
   </Card>
