@@ -24,13 +24,13 @@ const Header = (props: any) => {
       <header className="bg-dark text-light fixed-top border-secondary border-bottom p-1">
         <div className="d-flex justify-content-between">
           <button
-            className="btn btn-sm btn-outline-secondary"
+            className="btn btn-sm btn-outline-primary"
             onClick={() => props.getGold()}
           >
             {tarih}
           </button>
           <button
-            className="btn btn-sm btn-outline-secondary"
+            className="btn btn-sm btn-outline-primary"
             onClick={() => {
               props.setModalOpen(true);
               props.setModalTitle("Servis Sağlık Bilgileri");
