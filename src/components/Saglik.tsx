@@ -3,6 +3,24 @@ import { Table } from "reactstrap";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 
+const initialHostsState: {
+  [key: string]: string;
+} = {
+  "https://thegold1.herokuapp.com/": "0",
+  "https://thegold2.herokuapp.com/": "0",
+  "https://thegold3.herokuapp.com/": "0",
+  "https://thegold4.herokuapp.com/": "0",
+  "https://thegold5.herokuapp.com/": "0",
+  "https://thegold6.herokuapp.com/": "0",
+  "https://thegold7.herokuapp.com/": "0",
+  "https://thegold8.herokuapp.com/": "0",
+  "https://thegold9.herokuapp.com/": "0",
+  "https://thegold10.herokuapp.com/": "0",
+  "https://thegold11.herokuapp.com/": "0",
+  "https://thegold12.herokuapp.com/": "0",
+  "https://thegold13.herokuapp.com/": "0",
+};
+
 function Row({ a, b, c }: { a: string; b: string; c: string }) {
   return (
     <tr>
@@ -23,24 +41,6 @@ function Row({ a, b, c }: { a: string; b: string; c: string }) {
 }
 
 export default function Saglik() {
-  let initialHostsState: {
-    [key: string]: string;
-  } = {
-    "https://thegold1.herokuapp.com/": "0",
-    "https://thegold2.herokuapp.com/": "0",
-    "https://thegold3.herokuapp.com/": "0",
-    "https://thegold4.herokuapp.com/": "0",
-    "https://thegold5.herokuapp.com/": "0",
-    "https://thegold6.herokuapp.com/": "0",
-    "https://thegold7.herokuapp.com/": "0",
-    "https://thegold8.herokuapp.com/": "0",
-    "https://thegold9.herokuapp.com/": "0",
-    "https://thegold10.herokuapp.com/": "0",
-    "https://thegold11.herokuapp.com/": "0",
-    "https://thegold12.herokuapp.com/": "0",
-    "https://thegold13.herokuapp.com/": "0",
-  };
-
   const [hosts, setHosts] = useState(initialHostsState);
 
   const useForceUpdate = () => {
@@ -66,6 +66,7 @@ export default function Saglik() {
   }
 
   function main() {
+    setHosts(initialHostsState);
     SetStatus();
   }
 
