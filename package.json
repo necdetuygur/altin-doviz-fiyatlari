@@ -2,7 +2,7 @@
   "name": "altin-doviz-fiyatlari",
   "version": "1.0.0",
   "description": "Altın Döviz Fiyatları",
-  "homepage": "https://necdetuygur.github.io/altin-doviz-fiyatlari",
+  "homepage": "https://altin.herokuapp.com",
   "keywords": [
     "typescript",
     "react",
