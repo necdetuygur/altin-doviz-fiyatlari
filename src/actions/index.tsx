@@ -35,6 +35,12 @@ export const getGold = () => (dispatch: Dispatch) => {
   });
 };
 
+export const loadOldGold = () => (dispatch: Dispatch) => {
+  dispatch({
+    type: "LOAD_OLD_GOLD",
+  });
+};
+
 export const setModalOpen = (data: any) => (dispatch: Dispatch) => {
   dispatch({
     type: "SET_MODAL_OPEN",

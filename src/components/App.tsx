@@ -6,7 +6,8 @@ import Ikd from "./Ikd";
 import Modal from "./Modal";
 import Header from "./Header";
 import Footer from "./Footer";
-import { getGold } from "../actions";
+import Timeout from "./Timeout";
+import { getGold, loadOldGold } from "../actions";
 
 const App = (props: any) => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const App = (props: any) => {
   return (
     <div className="container-fluid mt-3">
       <Header />
+      <Timeout />
       <div className="row">
         <div className="col-md-4">
           <Altin {...props.gold} />
@@ -34,11 +36,10 @@ const App = (props: any) => {
 };
 
 export default connect(
-  (state: { isLoading: boolean; gold: Object }) => {
+  (state: { gold: Object }) => {
     return {
-      isLoading: state.isLoading,
       gold: state.gold,
     };
   },
-  { getGold }
+  { getGold, loadOldGold }
 )(App);
