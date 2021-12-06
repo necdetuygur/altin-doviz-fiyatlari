@@ -14,19 +14,30 @@ const CustomTable = (props: any) => {
   };
   return (
     <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
-      <tbody>
-        {props.data &&
-          Object.keys(props.data).map((key: any, index: number) => {
-            let value = props.data[key];
-            key = key === "Ceyrek" ? "Çeyrek" : key === "Yarim" ? "Yarım" : key;
-            return (
-              <tr key={key} onClick={() => modalOpen()}>
-                <td>{key}</td>
-                <td className="text-end">{value.replace(/-/gi, ".")}</td>
-              </tr>
-            );
-          })}
-      </tbody>
+      {props.data && (
+        <tbody>
+          <tr onClick={() => modalOpen()}>
+            <td>Gram</td>
+            <td className="text-end">{props.data.Gram}</td>
+          </tr>
+          <tr onClick={() => modalOpen()}>
+            <td>Çeyrek</td>
+            <td className="text-end">{props.data.Ceyrek}</td>
+          </tr>
+          <tr onClick={() => modalOpen()}>
+            <td>Yarım</td>
+            <td className="text-end">{props.data.Yarim}</td>
+          </tr>
+          <tr onClick={() => modalOpen()}>
+            <td>Tam</td>
+            <td className="text-end">{props.data.Tam}</td>
+          </tr>
+          <tr onClick={() => modalOpen()}>
+            <td>Son Güncellenme Tarihi</td>
+            <td className="text-end">{props.data.Tarih.replace(/-/gi, ".")}</td>
+          </tr>
+        </tbody>
+      )}
     </Table>
   );
 };
