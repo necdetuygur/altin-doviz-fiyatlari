@@ -24,7 +24,7 @@ const initialHostsState = () => {
   return temp;
 };
 
-function Row({ a, b, c }: { a: string; b: string; c: string }) {
+const Row = ({ a, b, c }: { a: string; b: string; c: string }) => {
   return (
     <tr>
       <td>
@@ -41,9 +41,9 @@ function Row({ a, b, c }: { a: string; b: string; c: string }) {
       </td>
     </tr>
   );
-}
+};
 
-export default function Saglik() {
+export default () => {
   const [hosts, setHosts] = useState(initialHostsState());
 
   const useForceUpdate = () => {
@@ -52,11 +52,11 @@ export default function Saglik() {
   };
   const forceUpdate = useForceUpdate();
 
-  function Get(url: string, callback: Function) {
+  const Get = (url: string, callback: Function) => {
     axios.get(url + "ikd").then((r) => callback(url, r.data.Yarim));
-  }
+  };
 
-  function SetStatus() {
+  const SetStatus = () => {
     for (let url in hosts) {
       Get(url, (u: string, d: string) => {
         const tempHosts = Object.assign(hosts, {
@@ -66,14 +66,14 @@ export default function Saglik() {
         forceUpdate();
       });
     }
-  }
+  };
 
-  function main() {
+  const main = () => {
     setHosts(initialHostsState());
     setTimeout(() => {
       SetStatus();
     }, 1e3);
-  }
+  };
 
   useEffect(() => {
     main();
@@ -102,4 +102,4 @@ export default function Saglik() {
       </tbody>
     </Table>
   );
-}
+};
