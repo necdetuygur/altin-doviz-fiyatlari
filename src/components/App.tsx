@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
 import Altin from "./Fw/Altin";
 import Doviz from "./Fw/Doviz";
 import Ikd from "./Ikd";
 import Modal from "./Modal";
 import Header from "./Header";
+import Footer from "./Footer";
 import { getGold } from "../actions";
 
 const App = (props: any) => {
@@ -26,6 +27,7 @@ const App = (props: any) => {
           <Ikd data={props.gold.ikd} />
         </div>
       </div>
+      <Footer />
       <Modal />
     </div>
   );
