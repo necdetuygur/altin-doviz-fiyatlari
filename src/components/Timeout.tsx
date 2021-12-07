@@ -6,11 +6,12 @@ import Card from "./Card";
 const Timeout = (props: any) => {
   const [timerFinish, setTimerFinish] = useState(false);
   useEffect(() => {
+    setTimerFinish(false);
     setTimeout(() => {
       setTimerFinish(true);
     }, 3e3);
     // eslint-disable-next-line
-  }, []);
+  }, [props.gold]);
   return (
     <>
       {timerFinish && "ikd" in props.gold && props.gold.ikd === null && (
