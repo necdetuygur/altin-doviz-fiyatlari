@@ -13,7 +13,7 @@ const Timeout = (props: any) => {
   }, []);
   return (
     <>
-      {timerFinish && (JSON.stringify(props.gold) + "").length < 9 && (
+      {timerFinish && "ikd" in props.gold && props.gold.ikd === null && (
         <Card title="Görünüşe göre fiyatlar getirilemedi, son alınan fiyatlar gösterilsin mi?">
           <div className="text-center p-2">
             <button
