@@ -90,13 +90,7 @@ const Row = ({
       <td>{Alis || <Loading width="19" />}</td>
       <td>{Satis || <Loading width="19" />}</td>
       <td className="text-end">
-        {YarinkiBeklentiTahmin ? (
-          <button className="btn btn-sm btn-dark">
-            {YarinkiBeklentiTahmin}
-          </button>
-        ) : (
-          <Loading width="19" />
-        )}
+        {YarinkiBeklentiTahmin ? YarinkiBeklentiTahmin : <Loading width="19" />}
       </td>
     </tr>
   );
