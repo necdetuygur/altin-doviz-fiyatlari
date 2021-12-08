@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { connect } from "react-redux";
 import { getGold, loadOldGold } from "../actions";
 import Card from "./Card";
@@ -7,9 +7,12 @@ const Timeout = (props: any) => {
   const [timerFinish, setTimerFinish] = useState(false);
   useEffect(() => {
     setTimerFinish(false);
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setTimerFinish(true);
     }, 3e3);
+    return () => {
+      clearTimeout(timer);
+    };
     // eslint-disable-next-line
   }, [props.gold]);
   return (
