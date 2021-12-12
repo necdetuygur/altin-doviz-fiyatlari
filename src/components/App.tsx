@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
 import Altin from "./Fw/Altin";
 import Doviz from "./Fw/Doviz";
 import Ikd from "./Ikd";
 import Modal from "./Modal";
 import Header from "./Header";
-import { getGold } from "../actions";
+import Footer from "./Footer";
+import Timeout from "./Timeout";
+import { getGold, loadOldGold } from "../actions";
 
 const App = (props: any) => {
   useEffect(() => {
@@ -15,6 +17,7 @@ const App = (props: any) => {
   return (
     <div className="container-fluid mt-3">
       <Header />
+      <Timeout />
       <div className="row">
         <div className="col-md-4">
           <Altin {...props.gold} />
@@ -26,17 +29,17 @@ const App = (props: any) => {
           <Ikd data={props.gold.ikd} />
         </div>
       </div>
+      <Footer />
       <Modal />
     </div>
   );
 };
 
 export default connect(
-  (state: { isLoading: boolean; gold: Object }) => {
+  (state: { gold: Object }) => {
     return {
-      isLoading: state.isLoading,
       gold: state.gold,
     };
   },
-  { getGold }
+  { getGold, loadOldGold }
 )(App);

@@ -15,7 +15,7 @@ export const getGold = () => (dispatch: Dispatch) => {
     "fw/doviz/eur",
     "fw/doviz/gbp",
   ];
-  paths.forEach(function (path) {
+  paths.forEach((path) => {
     dispatch({
       type: "GET_GOLD_SUCCESS",
       payload: {
@@ -32,6 +32,12 @@ export const getGold = () => (dispatch: Dispatch) => {
         },
       })
     );
+  });
+};
+
+export const loadOldGold = () => (dispatch: Dispatch) => {
+  dispatch({
+    type: "LOAD_OLD_GOLD",
   });
 };
 
