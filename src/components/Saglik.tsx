@@ -20,6 +20,10 @@ const initialHostsState = () => {
     "https://thegold11.herokuapp.com/": "0",
     "https://thegold12.herokuapp.com/": "0",
     "https://thegold13.herokuapp.com/": "0",
+    "https://thegold14.herokuapp.com/": "0",
+    "https://thegold15.herokuapp.com/": "0",
+    "https://thegold16.herokuapp.com/": "0",
+    "https://thegold17.herokuapp.com/": "0",
   };
   return temp;
 };
