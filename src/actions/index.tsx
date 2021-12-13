@@ -2,7 +2,7 @@ import axios from "axios";
 import { Dispatch } from "redux";
 
 const getBaseUrl = () =>
-  "https://thegold" + ~~(Math.random() * 13 + 1) + ".herokuapp.com/";
+  "https://thegold" + ~~(Math.random() * 17 + 1) + ".herokuapp.com/";
 
 export const getGold = () => (dispatch: Dispatch) => {
   const paths = [
