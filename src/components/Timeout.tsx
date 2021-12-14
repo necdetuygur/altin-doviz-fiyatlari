@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { getGold, loadOldGold } from "../actions";
 import Card from "./Card";

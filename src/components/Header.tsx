@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
-import { setModalOpen, setModalTitle, setModalBody } from "../actions";
+import { getGold, setModalOpen, setModalTitle, setModalBody } from "../actions";
 import { useState, useEffect } from "react";
 import Saglik from "./Saglik";
 import moment from "moment";
 import "moment/locale/tr";
-import { getGold } from "../actions";
 
 const momentNow = () =>
   moment(new Date(), "DD-MM-YYYY HH:mm:ss")
