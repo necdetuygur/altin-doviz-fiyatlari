@@ -10,3 +10,7 @@ body {
 .card-header {
   padding: 0.5rem 0.5rem;
 }
+
+.modal-content {
+  background-color: transparent;
+}
