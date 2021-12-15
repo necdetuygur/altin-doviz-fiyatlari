@@ -4,27 +4,15 @@ import { useEffect, useState } from "react";
 import Loading from "./Loading";
 
 const initialHostsState = () => {
-  const temp: {
+  let temp: {
     [key: string]: string;
-  } = {
-    "https://thegold1.herokuapp.com/": "0",
-    "https://thegold2.herokuapp.com/": "0",
-    "https://thegold3.herokuapp.com/": "0",
-    "https://thegold4.herokuapp.com/": "0",
-    "https://thegold5.herokuapp.com/": "0",
-    "https://thegold6.herokuapp.com/": "0",
-    "https://thegold7.herokuapp.com/": "0",
-    "https://thegold8.herokuapp.com/": "0",
-    "https://thegold9.herokuapp.com/": "0",
-    "https://thegold10.herokuapp.com/": "0",
-    "https://thegold11.herokuapp.com/": "0",
-    "https://thegold12.herokuapp.com/": "0",
-    "https://thegold13.herokuapp.com/": "0",
-    "https://thegold14.herokuapp.com/": "0",
-    "https://thegold15.herokuapp.com/": "0",
-    "https://thegold16.herokuapp.com/": "0",
-    "https://thegold17.herokuapp.com/": "0",
-  };
+  } = {};
+  for (let i = 1; i <= 17; i++) {
+    temp = {
+      ...temp,
+      ["https://thegold" + i + ".herokuapp.com/"]: "0",
+    };
+  }
   return temp;
 };
 
