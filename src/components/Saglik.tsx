@@ -7,7 +7,7 @@ const initialHostsState = () => {
   let temp: {
     [key: string]: string;
   } = {};
-  for (let i = 1; i < 17; i++) {
+  for (let i = 1; i <= 17; i++) {
     temp = {
       ...temp,
       ["https://thegold" + i + ".herokuapp.com/"]: "0",
