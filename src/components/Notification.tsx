@@ -4,12 +4,23 @@ import { Alert } from "reactstrap";
 var CryptoJS = require("crypto-js");
 
 const Notification = () => {
+  const confirmMsg =
+    "Bildirimi aktif edilen cihazlara bildirim mesajı gönderilecek, emin misiniz?";
+  const sendHash =
+    "U2FsdGVkX1+wYGuEmnZjpA7n2MjwYtHuMyOZrq5ZSWWZfaxgCIAlMOnYCdRJ3kb9NZ6JDq6AIMakqhBrSWmOkg==";
+  const changeHash =
+    "U2FsdGVkX19x5ExLETCqdDOhSGEFQnoZkN09smlrl99HUbYw//nqzQ2Y47UESFSYHnyQRqVHX5FoFgd3neApLw==";
+
   const [passwd, setPasswd] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [result, setResult] = useState(false);
   const [resultMessage, setResultMessage] = useState("");
-  const setValue = (e: any) => {
+
+  const Decrypt = (a: string, b: string) =>
+    CryptoJS.AES.decrypt(a, b).toString(CryptoJS.enc.Utf8);
+
+  const SetValue = (e: any) => {
     e.target.name == "title"
       ? setTitle(e.target.value)
       : e.target.name == "body"
@@ -18,27 +29,24 @@ const Notification = () => {
       ? setPasswd(e.target.value)
       : 1;
   };
+
+  const Result = (a: boolean, b: string) => {
+    setResult(a);
+    setResultMessage(b);
+  };
+
   const Send = () => {
     setTimeout(() => {
-      if (
-        confirm(
-          "Bildirimi aktif edilen cihazlara bildirim mesajı gönderilecek, emin misiniz?"
-        )
-      ) {
+      if (confirm(confirmMsg)) {
         if (passwd.length < 2) {
-          setResult(false);
-          setResultMessage("Parola yanlış!");
+          Result(false, "Parola yanlış!");
           return;
         }
 
-        const url = CryptoJS.AES.decrypt(
-          "U2FsdGVkX1/jcisiSIsguqq9I01+mulzuVdPkQWYpcgg/aCycY+qHVF/CTM5XMEsurFLDj3fDmSXVDP3KGU+jQ==",
-          passwd + "0"
-        ).toString(CryptoJS.enc.Utf8);
+        const url = Decrypt(sendHash, passwd + "0");
 
         if (!(url.indexOf("http") > -1)) {
-          setResult(false);
-          setResultMessage("Parola yanlış!");
+          Result(false, "Parola yanlış!");
           return;
         }
 
@@ -49,9 +57,32 @@ const Notification = () => {
               body: body,
             })
             .then((r) => {
-              setResult(r.data.result);
-              setResultMessage(r.data.message);
+              Result(r.data.result, r.data.message);
             });
+        }
+      }
+    }, 100);
+  };
+
+  const Change = () => {
+    setTimeout(() => {
+      if (confirm(confirmMsg)) {
+        if (passwd.length < 2) {
+          Result(false, "Parola yanlış!");
+          return;
+        }
+
+        const url = Decrypt(changeHash, passwd + "0");
+
+        if (!(url.indexOf("http") > -1)) {
+          Result(false, "Parola yanlış!");
+          return;
+        }
+
+        if (url.indexOf("http") > -1) {
+          axios.post(url, {}).then((r) => {
+            Result(r.data.result, r.data.message);
+          });
         }
       }
     }, 100);
@@ -70,8 +101,8 @@ const Notification = () => {
             name="passwd"
             type="password"
             className="form-control"
-            onChange={(e) => setValue(e)}
-            onKeyUp={(e) => setValue(e)}
+            onChange={(e) => SetValue(e)}
+            onKeyUp={(e) => SetValue(e)}
           />
         </div>
         <div className="input-group mb-2">
@@ -80,8 +111,8 @@ const Notification = () => {
             name="title"
             type="text"
             className="form-control"
-            onChange={(e) => setValue(e)}
-            onKeyUp={(e) => setValue(e)}
+            onChange={(e) => SetValue(e)}
+            onKeyUp={(e) => SetValue(e)}
           />
         </div>
         <div className="input-group mb-2">
@@ -89,11 +120,15 @@ const Notification = () => {
           <textarea
             name="body"
             className="form-control"
-            onChange={(e) => setValue(e)}
-            onKeyUp={(e) => setValue(e)}
+            onChange={(e) => SetValue(e)}
+            onKeyUp={(e) => SetValue(e)}
           ></textarea>
         </div>
-        <button className="btn btn-primary mb-2 w-100" onClick={() => Send()}>
+        <button className="btn btn-primary mb-2 w-50" onClick={() => Change()}>
+          <i className="fa fa-refresh pe-2"></i>
+          Sıfırla
+        </button>
+        <button className="btn btn-primary mb-2 w-50" onClick={() => Send()}>
           <i className="fa fa-paper-plane pe-2"></i>
           Gönder
         </button>
