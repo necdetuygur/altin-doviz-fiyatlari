@@ -38,7 +38,12 @@ const Row = ({
     <tr
       onClick={() => {
         setModalOpen(true);
-        setModalTitle(TipLong + " Detayları");
+        setModalTitle(
+          <span>
+            <i className="fa fa-line-chart pe-2"></i>
+            {TipLong + " Detayları"}
+          </span>
+        );
         setModalBody(
           <div>
             <Table
@@ -90,7 +95,21 @@ const Row = ({
       <td>{Alis || <Loading width="19" />}</td>
       <td>{Satis || <Loading width="19" />}</td>
       <td className="text-end">
-        {YarinkiBeklentiTahmin ? YarinkiBeklentiTahmin : <Loading width="19" />}
+        {YarinkiBeklentiTahmin ? (
+          YarinkiBeklentiTahmin.indexOf("Art") > -1 ? (
+            <span className="text-success">
+              <i className="fa fa-arrow-up pe-2"></i>
+              {YarinkiBeklentiTahmin}
+            </span>
+          ) : (
+            <span className="text-danger">
+              <i className="fa fa-arrow-down pe-2"></i>
+              {YarinkiBeklentiTahmin}
+            </span>
+          )
+        ) : (
+          <Loading width="19" />
+        )}
       </td>
     </tr>
   );
