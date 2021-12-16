@@ -37,12 +37,11 @@ const Notification = () => {
 
   const Send = () => {
     setTimeout(() => {
+      if (passwd.length < 2) {
+        Result(false, "Parola yanlış!");
+        return;
+      }
       if (confirm(confirmMsg)) {
-        if (passwd.length < 2) {
-          Result(false, "Parola yanlış!");
-          return;
-        }
-
         const url = Decrypt(sendHash, passwd + "0");
 
         if (!(url.indexOf("http") > -1)) {
@@ -66,12 +65,11 @@ const Notification = () => {
 
   const Change = () => {
     setTimeout(() => {
+      if (passwd.length < 2) {
+        Result(false, "Parola yanlış!");
+        return;
+      }
       if (confirm(confirmMsg)) {
-        if (passwd.length < 2) {
-          Result(false, "Parola yanlış!");
-          return;
-        }
-
         const url = Decrypt(changeHash, passwd + "0");
 
         if (!(url.indexOf("http") > -1)) {
