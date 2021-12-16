@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { reducer } from "./reducers";
 import thunk from "redux-thunk";
 import "./css/superhero.css";
+import 'font-awesome/css/font-awesome.min.css';
 import "./css/style.css";
 import App from "./components/App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
