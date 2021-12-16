@@ -93,12 +93,10 @@ const Notification = () => {
             onKeyUp={(e) => setValue(e)}
           ></textarea>
         </div>
-        <input
-          type="button"
-          value="Gönder"
-          className="btn btn-primary mb-2 w-100"
-          onClick={() => Send()}
-        />
+        <button className="btn btn-primary mb-2 w-100" onClick={() => Send()}>
+          <i className="fa fa-paper-plane pe-2"></i>
+          Gönder
+        </button>
       </div>
     </div>
   );

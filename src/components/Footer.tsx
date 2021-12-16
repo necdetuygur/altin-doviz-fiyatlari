@@ -13,29 +13,33 @@ const Footer = ({
   setModalBody: Function;
 }) => {
   return (
-    <div style={{ height: "50px" }}>
-      <footer className="border-secondary">
+    <footer className="bg-dark text-light fixed-bottom border-secondary border-top p-1">
+      <div className="d-flex justify-content-between">
         <button
-          className="float-start btn btn-sm btn-outline-primary mb-2"
+          className="btn btn-sm btn-outline-primary"
           onClick={() => {
             setModalOpen(true);
-            setModalTitle("Bildirim Gönder");
+            setModalTitle(
+              <span>
+                <i className="fa fa-bell pe-2"></i>
+                Bildirim Gönder
+              </span>
+            );
             setModalBody(<Notification />);
           }}
         >
+          <i className="fa fa-bell pe-2"></i>
           Bildirim Gönder
         </button>
-        <span className="float-end">
-          <GitHubButton
-            href="https://github.com/necdetuygur/altin-doviz-fiyatlari"
-            data-color-scheme="no-preference: dark; light: dark; dark: dark;"
-            data-size="large"
-          >
-            GitHub
-          </GitHubButton>
-        </span>
-      </footer>
-    </div>
+        <GitHubButton
+          href="https://github.com/necdetuygur/altin-doviz-fiyatlari"
+          data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+          data-size="large"
+        >
+          GitHub
+        </GitHubButton>
+      </div>
+    </footer>
   );
 };
 

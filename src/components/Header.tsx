@@ -26,16 +26,23 @@ const Header = (props: any) => {
             className="btn btn-sm btn-outline-primary"
             onClick={() => props.getGold()}
           >
+            <i className="fa fa-refresh pe-2"></i>
             {tarih}
           </button>
           <button
             className="btn btn-sm btn-outline-primary"
             onClick={() => {
               props.setModalOpen(true);
-              props.setModalTitle("Servis Sağlık Bilgileri");
+              props.setModalTitle(
+                <span>
+                  <i className="fa fa-heartbeat pe-2"></i>
+                  Servis Sağlık Bilgileri
+                </span>
+              );
               props.setModalBody(<Saglik />);
             }}
           >
+            <i className="fa fa-heartbeat pe-2"></i>
             Sağlık
           </button>
         </div>

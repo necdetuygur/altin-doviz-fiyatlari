@@ -8,7 +8,12 @@ const CustomTable = (props: any) => {
   const modalOpen = () => {
     if (!props.modalOpened) {
       props.setModalOpen(true);
-      props.setModalTitle("İzmir Kuyumcular Odası Altın Fiyatları");
+      props.setModalTitle(
+        <span>
+          <i className="fa fa-line-chart pe-2"></i>
+          İzmir Kuyumcular Odası Altın Fiyatları
+        </span>
+      );
       props.setModalBody(<CustomTable {...props} modalOpened={true} />);
     }
   };
