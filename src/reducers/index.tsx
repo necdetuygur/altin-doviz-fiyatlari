@@ -3,6 +3,7 @@ const INITIAL_STATE = {
   modalOpen: false,
   modalTitle: "",
   modalBody: null,
+  proMode: false,
 };
 
 export const reducer = (state = INITIAL_STATE, action: any) => {
@@ -35,6 +36,8 @@ export const reducer = (state = INITIAL_STATE, action: any) => {
       return { ...state, modalTitle: action.payload };
     case "SET_MODAL_BODY":
       return { ...state, modalBody: action.payload };
+    case "SET_PRO_MODE":
+      return { ...state, proMode: action.payload };
     default:
       return state;
   }

@@ -61,3 +61,10 @@ export const setModalBody = (data: any) => (dispatch: Dispatch) => {
     payload: data,
   });
 };
+
+export const setProMode = (data: any) => (dispatch: Dispatch) => {
+  dispatch({
+    type: "SET_PRO_MODE",
+    payload: data,
+  });
+};

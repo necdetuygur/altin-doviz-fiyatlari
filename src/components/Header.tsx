@@ -29,22 +29,26 @@ const Header = (props: any) => {
             <i className="fa fa-refresh pe-2"></i>
             {tarih}
           </button>
-          <button
-            className="btn btn-sm btn-outline-primary"
-            onClick={() => {
-              props.setModalOpen(true);
-              props.setModalTitle(
-                <span>
-                  <i className="fa fa-heartbeat pe-2"></i>
-                  Servis Sağlık Bilgileri
-                </span>
-              );
-              props.setModalBody(<Saglik />);
-            }}
-          >
-            <i className="fa fa-heartbeat pe-2"></i>
-            Sağlık
-          </button>
+          {props.proMode ? (
+            <button
+              className="btn btn-sm btn-outline-primary"
+              onClick={() => {
+                props.setModalOpen(true);
+                props.setModalTitle(
+                  <span>
+                    <i className="fa fa-heartbeat pe-2"></i>
+                    Servis Sağlık Bilgileri
+                  </span>
+                );
+                props.setModalBody(<Saglik />);
+              }}
+            >
+              <i className="fa fa-heartbeat pe-2"></i>
+              Sağlık
+            </button>
+          ) : (
+            <span>&nbsp;</span>
+          )}
         </div>
       </header>
     </div>
@@ -52,8 +56,10 @@ const Header = (props: any) => {
 };
 
 export default connect(
-  (state: {}) => {
-    return {};
+  (state: { proMode: boolean }) => {
+    return {
+      proMode: state.proMode,
+    };
   },
   { setModalOpen, setModalTitle, setModalBody, getGold }
 )(Header);
