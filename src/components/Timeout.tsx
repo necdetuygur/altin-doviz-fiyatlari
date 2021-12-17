@@ -28,7 +28,7 @@ const Timeout = (props: any) => {
             </button>
             <button
               className="mx-1 btn btn-sm btn-outline-primary"
-              onClick={() => props.getGold()}
+              onClick={() => props.getGold(false)}
             >
               Tekrar Dene
             </button>

@@ -7,7 +7,7 @@ import { getGold } from "../actions";
 
 const App = (props: any) => {
   useEffect(() => {
-    props.getGold();
+    props.getGold(true);
     // eslint-disable-next-line
   }, []);
   return (

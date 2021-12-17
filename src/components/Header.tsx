@@ -24,7 +24,7 @@ const Header = (props: any) => {
         <div className="d-flex justify-content-between">
           <button
             className="btn btn-sm btn-outline-primary"
-            onClick={() => props.getGold()}
+            onClick={() => props.getGold(false)}
           >
             <i className="fa fa-refresh pe-2"></i>
             {tarih}
