@@ -2,7 +2,17 @@ import { Table } from "reactstrap";
 import Card from "../Card";
 import Row from "./Row";
 
-const FwDoviz = ({ usd, eur, gbp }: { usd: any; eur: any; gbp: any }) => (
+const FwDoviz = ({
+  usd,
+  eur,
+  gbp,
+  editFavs,
+}: {
+  usd: any;
+  eur: any;
+  gbp: any;
+  editFavs: boolean;
+}) => (
   <Card title="Döviz Fiyatları" icon="/img/doviz.png">
     <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
       <tbody>
@@ -11,10 +21,11 @@ const FwDoviz = ({ usd, eur, gbp }: { usd: any; eur: any; gbp: any }) => (
           <td>Alış</td>
           <td>Satış</td>
           <td className="text-end">Tahmin</td>
+          {editFavs && <td className="text-end">Favoriler</td>}
         </tr>
-        <Row {...usd} TipShort="USD" TipLong="Dolar (USD)" />
-        <Row {...eur} TipShort="EUR" TipLong="Euro (EUR)" />
-        <Row {...gbp} TipShort="GBP" TipLong="Sterlin (GBP)" />
+        <Row {...usd} path="usd" editFavs={editFavs} />
+        <Row {...eur} path="eur" editFavs={editFavs} />
+        <Row {...gbp} path="gbp" editFavs={editFavs} />
       </tbody>
     </Table>
   </Card>

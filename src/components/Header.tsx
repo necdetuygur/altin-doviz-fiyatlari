@@ -1,5 +1,11 @@
 import { connect } from "react-redux";
-import { getGold, setModalOpen, setModalTitle, setModalBody } from "../actions";
+import {
+  getGold,
+  setModalOpen,
+  setModalTitle,
+  setModalBody,
+  toggleEditFavs,
+} from "../actions";
 import { useState, useEffect } from "react";
 import Saglik from "./Saglik";
 import moment from "moment";
@@ -49,6 +55,15 @@ const Header = (props: any) => {
           ) : (
             <span>&nbsp;</span>
           )}
+          <button
+            className="btn btn-sm btn-outline-primary"
+            onClick={() => {
+              props.toggleEditFavs();
+            }}
+          >
+            <i className="fa fa-pencil-square-o pe-2"></i>
+            Kişiselleştir
+          </button>
         </div>
       </header>
     </div>
@@ -61,5 +76,5 @@ export default connect(
       proMode: state.proMode,
     };
   },
-  { setModalOpen, setModalTitle, setModalBody, getGold }
+  { setModalOpen, setModalTitle, setModalBody, getGold, toggleEditFavs }
 )(Header);

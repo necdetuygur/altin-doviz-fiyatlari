@@ -31,7 +31,7 @@ export const getGold = (isFirstRequest: boolean) => (dispatch: Dispatch) => {
         path: path === "ikd" ? path : path.split("/")[2],
       },
     });
-    
+
     // Fill
     axios.get(baseUrl + path).then((r) =>
       dispatch({
@@ -76,5 +76,18 @@ export const setProMode = (data: any) => (dispatch: Dispatch) => {
   dispatch({
     type: "SET_PRO_MODE",
     payload: data,
+  });
+};
+
+export const setFavs = (data: any) => (dispatch: Dispatch) => {
+  dispatch({
+    type: "SET_FAVS",
+    payload: data,
+  });
+};
+
+export const toggleEditFavs = () => (dispatch: Dispatch) => {
+  dispatch({
+    type: "TOGGLE_EDIT_FAVS",
   });
 };

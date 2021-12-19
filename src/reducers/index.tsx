@@ -4,6 +4,8 @@ const INITIAL_STATE = {
   modalTitle: "",
   modalBody: null,
   proMode: false,
+  favs: JSON.parse(localStorage.getItem("favs") || "[]"),
+  editFavs: false,
 };
 
 export const reducer = (state = INITIAL_STATE, action: any) => {
@@ -38,6 +40,11 @@ export const reducer = (state = INITIAL_STATE, action: any) => {
       return { ...state, modalBody: action.payload };
     case "SET_PRO_MODE":
       return { ...state, proMode: action.payload };
+    case "SET_FAVS":
+      localStorage.setItem("favs", JSON.stringify(action.payload));
+      return { ...state, favs: action.payload };
+    case "TOGGLE_EDIT_FAVS":
+      return { ...state, editFavs: !state.editFavs };
     default:
       return state;
   }

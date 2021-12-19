@@ -7,11 +7,13 @@ const FwAltin = ({
   ceyrek,
   yarim,
   tam,
+  editFavs,
 }: {
   gram: any;
   ceyrek: any;
   yarim: any;
   tam: any;
+  editFavs: boolean;
 }) => (
   <Card title="Altın Fiyatları" icon="/img/apple-touch-icon-152x152.png">
     <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
@@ -21,11 +23,12 @@ const FwAltin = ({
           <td>Alış</td>
           <td>Satış</td>
           <td className="text-end">Tahmin</td>
+          {editFavs && <td className="text-end">Favoriler</td>}
         </tr>
-        <Row {...gram} TipShort="Gram" TipLong="Gram Altın" />
-        <Row {...ceyrek} TipShort="Çeyrek" TipLong="Çeyrek Altın" />
-        <Row {...yarim} TipShort="Yarım" TipLong="Yarım Altın" />
-        <Row {...tam} TipShort="Tam" TipLong="Tam Altın" />
+        <Row {...gram} path="gram" editFavs={editFavs} />
+        <Row {...ceyrek} path="ceyrek" editFavs={editFavs} />
+        <Row {...yarim} path="yarim" editFavs={editFavs} />
+        <Row {...tam} path="tam" editFavs={editFavs} />
       </tbody>
     </Table>
   </Card>
