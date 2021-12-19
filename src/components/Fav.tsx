@@ -26,7 +26,7 @@ const Fav = (props: any) => {
             <td className="text-end">Tahmin</td>
           </tr>
           {props.favs.map((fav: any) => (
-            <Row key={fav} {...props.gold[fav]} editFavs={false} />
+            <Row key={fav} {...props.gold[fav]} path={fav} editFavs={false} />
           ))}
         </tbody>
       </Table>
