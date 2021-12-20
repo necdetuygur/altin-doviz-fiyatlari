@@ -161,9 +161,10 @@ const Row = ({
 };
 
 export default connect(
-  (state: { favs: Array<string> }) => {
+  (state: { favs: Array<string>; isDark: boolean }) => {
     return {
       favs: state.favs,
+      isDark: state.isDark,
     };
   },
   { setModalOpen, setModalTitle, setModalBody, setFavs }
