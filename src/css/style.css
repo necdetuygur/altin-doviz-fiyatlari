@@ -30,10 +30,14 @@ td {
   transition: background-color 333ms linear;
 }
 
-.table-light.table > :not(caption) > * > * {
+.bg-light.card-header {
+  background-color: #dbe1e9 !important;
+}
+
+.bg-light.card-body {
   background-color: #e8ecf1 !important;
 }
 
-.bg-light.card-header {
-  background-color: #dbe1e9 !important;
+.table-light.table > :not(caption) > * > * {
+  background-color: #e8ecf1 !important;
 }

@@ -18,6 +18,8 @@ export default ({
       {icon && <img width="33" src={process.env.PUBLIC_URL + icon} alt="" />}
       <span className={icon && "ms-2"}>{title}</span>
     </div>
-    <div className="card-body p-0">{children}</div>
+    <div className={"card-body p-0 " + (isDark ? "bg-dark" : "bg-light")}>
+      {children}
+    </div>
   </div>
 );
