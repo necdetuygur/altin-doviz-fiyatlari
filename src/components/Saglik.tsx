@@ -28,7 +28,7 @@ const Row = ({ a, b, c }: { a: string; b: string; c: string }) => {
         {c !== "0" ? (
           <span className={"badge bg-" + b}>{c}</span>
         ) : (
-          <Loading width="16" />
+          <Loading isDark={true} width="16" />
         )}
       </td>
     </tr>

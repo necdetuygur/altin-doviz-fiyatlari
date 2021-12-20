@@ -8,15 +8,26 @@ const FwAltin = ({
   yarim,
   tam,
   editFavs,
+  isDark,
 }: {
   gram: any;
   ceyrek: any;
   yarim: any;
   tam: any;
   editFavs: boolean;
+  isDark: boolean;
 }) => (
-  <Card title="Altın Fiyatları" icon="/img/apple-touch-icon-152x152.png">
-    <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
+  <Card
+    title="Altın Fiyatları"
+    icon="/img/apple-touch-icon-152x152.png"
+    isDark={isDark}
+  >
+    <Table
+      hover
+      responsive
+      style={{ cursor: "pointer", marginBottom: 0 }}
+      className={isDark ? "table-dark text-white" : "table-light text-dark"}
+    >
       <tbody>
         <tr>
           <td></td>

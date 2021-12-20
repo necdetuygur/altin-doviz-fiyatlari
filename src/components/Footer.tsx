@@ -15,12 +15,14 @@ const Footer = ({
   setModalBody,
   setProMode,
   proMode,
+  isDark,
 }: {
   setModalOpen: Function;
   setModalTitle: Function;
   setModalBody: Function;
   setProMode: Function;
   proMode: boolean;
+  isDark: boolean;
 }) => {
   const [proModeCounter, setProModeCounter] = useState(4);
   const decreaseProModeCounter = () => {
@@ -34,7 +36,10 @@ const Footer = ({
   return (
     <div style={{ height: "90px" }}>
       <footer
-        className="bg-dark text-light fixed-bottom border-secondary border-top p-1"
+        className={
+          (isDark ? "bg-dark text-light" : "bg-light text-dark") +
+          " fixed-bottom border-secondary border-top p-1"
+        }
         onClick={() => {
           decreaseProModeCounter();
         }}
@@ -42,7 +47,9 @@ const Footer = ({
         <div className="d-flex justify-content-between">
           {proMode ? (
             <button
-              className="btn btn-sm btn-outline-primary"
+              className={
+                "btn btn-sm btn-outline-" + (isDark ? "primary" : "dark")
+              }
               onClick={() => {
                 setModalOpen(true);
                 setModalTitle(
@@ -74,9 +81,10 @@ const Footer = ({
 };
 
 export default connect(
-  (state: { proMode: boolean }) => {
+  (state: { proMode: boolean; isDark: boolean }) => {
     return {
       proMode: state.proMode,
+      isDark: state.isDark,
     };
   },
   { setModalOpen, setModalTitle, setModalBody, setProMode }

@@ -13,27 +13,38 @@ const Modal = (props: any) => {
     <BsModal
       toggle={modalToggle}
       isOpen={props.modalOpen}
-      className="bg-dark text-white"
+      className={props.isDark ? "bg-dark text-white" : "bg-light text-dark"}
     >
-      <ModalHeader toggle={modalToggle} className="bg-dark text-white">
+      <ModalHeader
+        toggle={modalToggle}
+        className={props.isDark ? "bg-dark text-white" : "bg-light text-dark"}
+      >
         {props.modalTitle}
       </ModalHeader>
       <ModalBody className="p-0">{props.modalBody}</ModalBody>
-      <ModalFooter className="bg-dark text-white">
-        <button className="btn btn-sm btn-secondary" onClick={modalToggle}>
+      <ModalFooter
+        className={props.isDark ? "bg-dark text-white" : "bg-light text-dark"}
+      >
+        <button className="btn btn-sm btn-danger" onClick={modalToggle}>
           Kapat
-        </button>{" "}
+        </button>
       </ModalFooter>
     </BsModal>
   );
 };
 
 export default connect(
-  (state: { modalOpen: boolean; modalTitle: any; modalBody: any }) => {
+  (state: {
+    modalOpen: boolean;
+    modalTitle: any;
+    modalBody: any;
+    isDark: boolean;
+  }) => {
     return {
       modalOpen: state.modalOpen,
       modalTitle: state.modalTitle,
       modalBody: state.modalBody,
+      isDark: state.isDark,
     };
   },
   { setModalOpen, setModalTitle, setModalBody }

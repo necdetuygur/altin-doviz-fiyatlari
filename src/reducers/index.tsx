@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   proMode: false,
   favs: JSON.parse(localStorage.getItem("favs") || "[]"),
   editFavs: false,
+  isDark: localStorage.getItem("isDark") === "1" || false,
 };
 
 export const reducer = (state = INITIAL_STATE, action: any) => {
@@ -45,6 +46,11 @@ export const reducer = (state = INITIAL_STATE, action: any) => {
       return { ...state, favs: action.payload };
     case "TOGGLE_EDIT_FAVS":
       return { ...state, editFavs: !state.editFavs };
+    case "TOGGLE_IS_DARK":
+      const newIsDark = !state.isDark;
+      localStorage.setItem("isDark", newIsDark ? "1" : "0");
+      document.body.style.backgroundColor = newIsDark ? "#0f2537" : "#c8d0d9";
+      return { ...state, isDark: newIsDark };
     default:
       return state;
   }

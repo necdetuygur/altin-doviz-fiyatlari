@@ -14,3 +14,26 @@ body {
 .modal-content {
   background-color: transparent;
 }
+
+body,
+button,
+div,
+header,
+footer,
+table,
+tr,
+td {
+  -webkit-transition: background-color 333ms linear;
+  -moz-transition: background-color 333ms linear;
+  -o-transition: background-color 333ms linear;
+  -ms-transition: background-color 333ms linear;
+  transition: background-color 333ms linear;
+}
+
+.table-light.table > :not(caption) > * > * {
+  background-color: #e8ecf1 !important;
+}
+
+.bg-light.card-header {
+  background-color: #dbe1e9 !important;
+}

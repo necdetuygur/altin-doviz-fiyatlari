@@ -4,11 +4,13 @@ import Altin from "./Fw/Altin";
 import Doviz from "./Fw/Doviz";
 import Ikd from "./Ikd";
 import Fav from "./Fav";
-import { getGold } from "../actions";
+import { getGold, toggleIsDark } from "../actions";
 
 const App = (props: any) => {
   useEffect(() => {
     props.getGold(true);
+    props.toggleIsDark();
+    props.toggleIsDark();
     // eslint-disable-next-line
   }, []);
   return (
@@ -20,13 +22,21 @@ const App = (props: any) => {
           </div>
         )}
         <div className="col-md-4">
-          <Altin {...props.gold} editFavs={props.editFavs} />
+          <Altin
+            {...props.gold}
+            editFavs={props.editFavs}
+            isDark={props.isDark}
+          />
         </div>
         <div className="col-md-4">
-          <Doviz {...props.gold} editFavs={props.editFavs} />
+          <Doviz
+            {...props.gold}
+            editFavs={props.editFavs}
+            isDark={props.isDark}
+          />
         </div>
         <div className="col-md-4">
-          <Ikd data={props.gold.ikd} />
+          <Ikd data={props.gold.ikd} isDark={props.isDark} />
         </div>
       </div>
     </>
@@ -34,12 +44,18 @@ const App = (props: any) => {
 };
 
 export default connect(
-  (state: { gold: Object; editFavs: boolean; favs: Array<string> }) => {
+  (state: {
+    gold: Object;
+    editFavs: boolean;
+    favs: Array<string>;
+    isDark: boolean;
+  }) => {
     return {
       gold: state.gold,
       editFavs: state.editFavs,
       favs: state.favs,
+      isDark: state.isDark,
     };
   },
-  { getGold }
+  { getGold, toggleIsDark }
 )(App);

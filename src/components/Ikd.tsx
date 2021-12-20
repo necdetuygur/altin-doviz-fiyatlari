@@ -18,7 +18,14 @@ const CustomTable = (props: any) => {
     }
   };
   return (
-    <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
+    <Table
+      hover
+      responsive
+      style={{ cursor: "pointer", marginBottom: 0 }}
+      className={
+        props.isDark ? "table-dark text-white" : "table-light text-dark"
+      }
+    >
       {props.data && (
         <tbody>
           <tr onClick={() => modalOpen()}>
@@ -52,12 +59,13 @@ const Ikd = (props: any) => {
     <Card
       title="İzmir Kuyumcular Odası Altın Fiyatları"
       icon="/img/apple-touch-icon-152x152.png"
+      isDark={props.isDark}
     >
       {props.data ? (
         <CustomTable {...props} modalOpened={false} />
       ) : (
         <div className="text-center p-3">
-          <Loading width="19" />
+          <Loading isDark={props.isDark} width="19" />
         </div>
       )}
     </Card>

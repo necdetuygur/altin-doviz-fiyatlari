@@ -91,3 +91,9 @@ export const toggleEditFavs = () => (dispatch: Dispatch) => {
     type: "TOGGLE_EDIT_FAVS",
   });
 };
+
+export const toggleIsDark = () => (dispatch: Dispatch) => {
+  dispatch({
+    type: "TOGGLE_IS_DARK",
+  });
+};

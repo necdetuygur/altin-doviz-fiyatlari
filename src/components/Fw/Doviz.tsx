@@ -7,14 +7,23 @@ const FwDoviz = ({
   eur,
   gbp,
   editFavs,
+
+  isDark,
 }: {
   usd: any;
   eur: any;
   gbp: any;
   editFavs: boolean;
+
+  isDark: boolean;
 }) => (
-  <Card title="Döviz Fiyatları" icon="/img/doviz.png">
-    <Table dark hover responsive style={{ cursor: "pointer", marginBottom: 0 }}>
+  <Card title="Döviz Fiyatları" icon="/img/doviz.png" isDark={isDark}>
+    <Table
+      hover
+      responsive
+      style={{ cursor: "pointer", marginBottom: 0 }}
+      className={isDark ? "table-dark text-white" : "table-light text-dark"}
+    >
       <tbody>
         <tr>
           <td></td>

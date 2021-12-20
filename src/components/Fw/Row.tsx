@@ -27,6 +27,8 @@ const Row = ({
   GununEnYuksekDegeri,
   YarinkiBeklentiOy,
   YarinkiBeklentiTahmin,
+
+  isDark,
 }: {
   path: string;
   editFavs: boolean;
@@ -45,6 +47,8 @@ const Row = ({
   GununEnYuksekDegeri: string;
   YarinkiBeklentiOy: string;
   YarinkiBeklentiTahmin: string;
+
+  isDark: boolean;
 }) => {
   return (
     <tr
@@ -60,10 +64,12 @@ const Row = ({
           setModalBody(
             <div>
               <Table
-                dark
                 hover
                 responsive
                 style={{ cursor: "pointer", marginBottom: 0 }}
+                className={
+                  isDark ? "table-dark text-white" : "table-light text-dark"
+                }
               >
                 <tbody>
                   <tr>
@@ -106,23 +112,23 @@ const Row = ({
       }}
     >
       <td className="text-start">{Lang[path]}</td>
-      <td>{Alis || <Loading width="19" />}</td>
-      <td>{Satis || <Loading width="19" />}</td>
+      <td>{Alis || <Loading isDark={isDark} width="19" />}</td>
+      <td>{Satis || <Loading isDark={isDark} width="19" />}</td>
       <td className="text-end">
         {YarinkiBeklentiTahmin ? (
           YarinkiBeklentiTahmin.indexOf("Art") > -1 ? (
-            <span className="text-success">
+            <b className="text-success">
               <i className="fa fa-arrow-up pe-2"></i>
               {YarinkiBeklentiTahmin}
-            </span>
+            </b>
           ) : (
-            <span className="text-danger">
+            <b className="text-danger">
               <i className="fa fa-arrow-down pe-2"></i>
               {YarinkiBeklentiTahmin}
-            </span>
+            </b>
           )
         ) : (
-          <Loading width="19" />
+          <Loading isDark={isDark} width="19" />
         )}
       </td>
       {editFavs && (
