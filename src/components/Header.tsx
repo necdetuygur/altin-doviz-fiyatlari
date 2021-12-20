@@ -75,7 +75,7 @@ const Header = (props: any) => {
                 props.toggleEditFavs();
               }}
             >
-              <i className="fa fa-pencil-square-o pe-2"></i>
+              <i className="fa fa-pencil-square-o"></i>
             </button>
             <button
               className={
