@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/altin-doviz-fiyatlari/static/css/main.1ef535bc.chunk.css",
-    "main.js": "/altin-doviz-fiyatlari/static/js/main.1ffd29c9.chunk.js",
+    "main.js": "/altin-doviz-fiyatlari/static/js/main.bee1a9fa.chunk.js",
     "runtime-main.js": "/altin-doviz-fiyatlari/static/js/runtime-main.e277b3a0.js",
     "static/css/2.3804ab61.chunk.css": "/altin-doviz-fiyatlari/static/css/2.3804ab61.chunk.css",
-    "static/js/2.351a02b3.chunk.js": "/altin-doviz-fiyatlari/static/js/2.351a02b3.chunk.js",
+    "static/js/2.48f401ea.chunk.js": "/altin-doviz-fiyatlari/static/js/2.48f401ea.chunk.js",
     "index.html": "/altin-doviz-fiyatlari/index.html",
     "service-worker.js": "/altin-doviz-fiyatlari/service-worker.js",
-    "static/js/2.351a02b3.chunk.js.LICENSE.txt": "/altin-doviz-fiyatlari/static/js/2.351a02b3.chunk.js.LICENSE.txt",
+    "static/js/2.48f401ea.chunk.js.LICENSE.txt": "/altin-doviz-fiyatlari/static/js/2.48f401ea.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/altin-doviz-fiyatlari/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.e277b3a0.js",
     "static/css/2.3804ab61.chunk.css",
-    "static/js/2.351a02b3.chunk.js",
+    "static/js/2.48f401ea.chunk.js",
     "static/css/main.1ef535bc.chunk.css",
-    "static/js/main.1ffd29c9.chunk.js"
+    "static/js/main.bee1a9fa.chunk.js"
   ]
 }
