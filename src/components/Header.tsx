@@ -8,7 +8,6 @@ import {
   toggleIsDark,
 } from "../actions";
 import { useState, useEffect } from "react";
-import Saglik from "./Saglik";
 import moment from "moment";
 import "moment/locale/tr";
 
@@ -34,37 +33,28 @@ const Header = (props: any) => {
         }
       >
         <div className="d-flex justify-content-between">
-          <button
-            className={
-              "btn btn-sm btn-outline-" + (props.isDark ? "primary" : "dark")
-            }
-            onClick={() => props.getGold(false)}
-          >
-            <i className="fa fa-refresh pe-2"></i>
-            {tarih}
-          </button>
-          {props.proMode ? (
+          <span>
+            <button
+              className={
+                "me-1 btn btn-sm btn-outline-" +
+                (props.isDark ? "primary" : "dark")
+              }
+              onClick={() => {
+                props.getGold(true);
+              }}
+            >
+              <i style={{ width: "16px" }} className="fa fa-refresh"></i>
+            </button>
+
             <button
               className={
                 "btn btn-sm btn-outline-" + (props.isDark ? "primary" : "dark")
               }
-              onClick={() => {
-                props.setModalOpen(true);
-                props.setModalTitle(
-                  <span>
-                    <i className="fa fa-heartbeat pe-2"></i>
-                    Servis Sağlık Bilgileri
-                  </span>
-                );
-                props.setModalBody(<Saglik />);
-              }}
+              onClick={() => props.getGold(false)}
             >
-              <i className="fa fa-heartbeat pe-2"></i>
-              Sağlık
+              {tarih}
             </button>
-          ) : (
-            <span>&nbsp;</span>
-          )}
+          </span>
           <span>
             <button
               className={

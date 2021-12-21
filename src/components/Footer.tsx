@@ -1,5 +1,6 @@
 import GitHubButton from "react-github-btn";
 import Notification from "./Notification";
+import Health from "./Health";
 import { connect } from "react-redux";
 import {
   setModalOpen,
@@ -67,6 +68,30 @@ const Footer = ({
           ) : (
             <span>&nbsp;</span>
           )}
+
+          {proMode ? (
+            <button
+              className={
+                "btn btn-sm btn-outline-" + (isDark ? "primary" : "dark")
+              }
+              onClick={() => {
+                setModalOpen(true);
+                setModalTitle(
+                  <span>
+                    <i className="fa fa-heartbeat pe-2"></i>
+                    Servis Sağlık Bilgileri
+                  </span>
+                );
+                setModalBody(<Health />);
+              }}
+            >
+              <i className="fa fa-heartbeat pe-2"></i>
+              Sağlık
+            </button>
+          ) : (
+            <span>&nbsp;</span>
+          )}
+
           <GitHubButton
             href="https://github.com/necdetuygur/altin-doviz-fiyatlari"
             data-color-scheme="no-preference: dark; light: dark; dark: dark;"
