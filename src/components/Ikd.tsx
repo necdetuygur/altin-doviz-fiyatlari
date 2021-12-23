@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import { Table } from "reactstrap";
 import { connect } from "react-redux";
 import { setModalOpen, setModalTitle, setModalBody } from "../actions";
+import IkdHistory from "./IkdHistory";
 
 const CustomTable = (props: any) => {
   const modalOpen = () => {
@@ -68,6 +69,23 @@ const Ikd = (props: any) => {
           <Loading isDark={props.isDark} width="19" />
         </div>
       )}
+      <div className="p-2">
+        <button
+          className="btn btn-sm btn-primary w-100"
+          onClick={() => {
+            props.setModalOpen(true);
+            props.setModalTitle(
+              <span>
+                <i className="fa fa-line-chart pe-2"></i>
+                Geçmiş Altın Fiyatları
+              </span>
+            );
+            props.setModalBody(<IkdHistory />);
+          }}
+        >
+          Geçmiş Altın Fiyatları
+        </button>
+      </div>
     </Card>
   );
 };

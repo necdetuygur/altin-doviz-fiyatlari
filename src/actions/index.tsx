@@ -97,3 +97,14 @@ export const toggleIsDark = () => (dispatch: Dispatch) => {
     type: "TOGGLE_IS_DARK",
   });
 };
+
+export const getIkdHistory =
+  (isFirstRequest: boolean, date: string) => (dispatch: Dispatch) => {
+    const baseUrl = getBaseUrl(isFirstRequest);
+    axios.get(baseUrl + "ikd/" + date).then((r) =>
+      dispatch({
+        type: "GET_IKD_HISTORY_SUCCESS",
+        payload: r.data,
+      })
+    );
+  };

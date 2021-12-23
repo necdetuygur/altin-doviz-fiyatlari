@@ -7,6 +7,7 @@ const INITIAL_STATE = {
   favs: JSON.parse(localStorage.getItem("favs") || "[]"),
   editFavs: false,
   isDark: localStorage.getItem("isDark") === "1" || false,
+  ikdHistory: [],
 };
 
 export const reducer = (state = INITIAL_STATE, action: any) => {
@@ -51,6 +52,8 @@ export const reducer = (state = INITIAL_STATE, action: any) => {
       localStorage.setItem("isDark", newIsDark ? "1" : "0");
       document.body.style.backgroundColor = newIsDark ? "#0f2537" : "#c8d0d9";
       return { ...state, isDark: newIsDark };
+    case "GET_IKD_HISTORY_SUCCESS":
+      return { ...state, ikdHistory: action.payload };
     default:
       return state;
   }
