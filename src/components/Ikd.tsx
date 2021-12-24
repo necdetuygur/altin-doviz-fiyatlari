@@ -56,11 +56,31 @@ const CustomTable = (props: any) => {
 };
 
 const Ikd = (props: any) => {
+  const gafModal = () => {
+    props.setModalOpen(true);
+    props.setModalTitle(
+      <span>
+        <i className="fa fa-line-chart pe-2"></i>
+        Geçmiş Altın Fiyatları
+      </span>
+    );
+    props.setModalBody(<IkdHistory />);
+  };
   return (
     <Card
       title="İzmir Kuyumcular Odası Altın Fiyatları"
       icon="/img/apple-touch-icon-152x152.png"
       isDark={props.isDark}
+      header={
+        <button
+          className="btn btn-sm btn-outline-primary"
+          onClick={() => {
+            gafModal();
+          }}
+        >
+          <i style={{ width: "16px" }} className="fa fa-history"></i>
+        </button>
+      }
     >
       {props.data ? (
         <CustomTable {...props} modalOpened={false} />
@@ -73,14 +93,7 @@ const Ikd = (props: any) => {
         <button
           className="btn btn-sm btn-primary w-100"
           onClick={() => {
-            props.setModalOpen(true);
-            props.setModalTitle(
-              <span>
-                <i className="fa fa-line-chart pe-2"></i>
-                Geçmiş Altın Fiyatları
-              </span>
-            );
-            props.setModalBody(<IkdHistory />);
+            gafModal();
           }}
         >
           <i className="fa fa-history pe-2"></i>
