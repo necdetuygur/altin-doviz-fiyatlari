@@ -122,14 +122,20 @@ const Notification = () => {
             onKeyUp={(e) => SetValue(e)}
           ></textarea>
         </div>
-        <button className="btn btn-primary mb-2 w-50" onClick={() => Change()}>
-          <i className="fa fa-refresh pe-2"></i>
-          Sıfırla
-        </button>
-        <button className="btn btn-primary mb-2 w-50" onClick={() => Send()}>
-          <i className="fa fa-paper-plane pe-2"></i>
-          Gönder
-        </button>
+        <div className="row">
+          <div className="col">
+            <button className="btn btn-primary w-100" onClick={() => Change()}>
+              <i className="fa fa-refresh pe-2"></i>
+              Sıfırla
+            </button>
+          </div>
+          <div className="col">
+            <button className="btn btn-primary w-100" onClick={() => Send()}>
+              <i className="fa fa-paper-plane pe-2"></i>
+              Gönder
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
