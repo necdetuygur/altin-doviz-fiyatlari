@@ -140,6 +140,7 @@ const IkdHistory = (props: any) => {
               props.getIkdHistory(true, `${day}.${month}.${year}`);
             }}
           >
+            <i className="fa fa-eye pe-2"></i>
             Göster
           </button>
         </div>

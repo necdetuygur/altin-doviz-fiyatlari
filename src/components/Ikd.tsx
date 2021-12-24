@@ -83,6 +83,7 @@ const Ikd = (props: any) => {
             props.setModalBody(<IkdHistory />);
           }}
         >
+          <i className="fa fa-history pe-2"></i>
           Geçmiş Altın Fiyatları
         </button>
       </div>

@@ -111,28 +111,8 @@ const Row = ({
         }
       }}
     >
-      <td className="text-start">{Lang[path]}</td>
-      <td>{Alis || <Loading isDark={isDark} width="19" />}</td>
-      <td>{Satis || <Loading isDark={isDark} width="19" />}</td>
-      <td className="text-end">
-        {YarinkiBeklentiTahmin ? (
-          YarinkiBeklentiTahmin.indexOf("Art") > -1 ? (
-            <b className="text-success">
-              <i className="fa fa-arrow-up pe-2"></i>
-              {YarinkiBeklentiTahmin}
-            </b>
-          ) : (
-            <b className="text-danger">
-              <i className="fa fa-arrow-down pe-2"></i>
-              {YarinkiBeklentiTahmin}
-            </b>
-          )
-        ) : (
-          <Loading isDark={isDark} width="19" />
-        )}
-      </td>
       {editFavs && (
-        <td className="text-end">
+        <td className="text-start">
           {!(favs.indexOf(path) > -1) && (
             <button
               className="btn btn-dark btn-sm"
@@ -156,6 +136,26 @@ const Row = ({
           )}
         </td>
       )}
+      <td className="text-start">{Lang[path]}</td>
+      <td>{Alis || <Loading isDark={isDark} width="19" />}</td>
+      <td>{Satis || <Loading isDark={isDark} width="19" />}</td>
+      <td className="text-end">
+        {YarinkiBeklentiTahmin ? (
+          YarinkiBeklentiTahmin.indexOf("Art") > -1 ? (
+            <b className="text-success">
+              <i className="fa fa-arrow-up pe-2"></i>
+              {YarinkiBeklentiTahmin}
+            </b>
+          ) : (
+            <b className="text-danger">
+              <i className="fa fa-arrow-down pe-2"></i>
+              {YarinkiBeklentiTahmin}
+            </b>
+          )
+        ) : (
+          <Loading isDark={isDark} width="19" />
+        )}
+      </td>
     </tr>
   );
 };

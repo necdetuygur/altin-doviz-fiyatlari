@@ -30,11 +30,11 @@ const FwAltin = ({
     >
       <tbody>
         <tr>
+          {editFavs && <td className="text-start">Favoriler</td>}
           <td></td>
           <td>Alış</td>
           <td>Satış</td>
           <td className="text-end">Tahmin</td>
-          {editFavs && <td className="text-end">Favoriler</td>}
         </tr>
         <Row {...gram} path="gram" editFavs={editFavs} />
         <Row {...ceyrek} path="ceyrek" editFavs={editFavs} />

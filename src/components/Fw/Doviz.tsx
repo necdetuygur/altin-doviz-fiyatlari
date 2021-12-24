@@ -26,11 +26,11 @@ const FwDoviz = ({
     >
       <tbody>
         <tr>
+          {editFavs && <td className="text-start">Favoriler</td>}
           <td></td>
           <td>Alış</td>
           <td>Satış</td>
           <td className="text-end">Tahmin</td>
-          {editFavs && <td className="text-end">Favoriler</td>}
         </tr>
         <Row {...usd} path="usd" editFavs={editFavs} />
         <Row {...eur} path="eur" editFavs={editFavs} />
