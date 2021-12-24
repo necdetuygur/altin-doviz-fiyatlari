@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import Loading from "./Loading";
 import { Table } from "reactstrap";
 import { connect } from "react-redux";
 import { getIkdHistory } from "../actions";
+
+const adZero = (a: number) => ("00" + a).slice(-2);
 
 const CustomTable = (props: any) => {
   return (
@@ -38,11 +41,15 @@ const CustomTable = (props: any) => {
 };
 
 const IkdHistory = (props: any) => {
-  const date = new Date();
+  const initDate = new Date(new Date().getTime() - 86400000);
 
-  const [year, setYear] = useState(date.getFullYear() + "");
-  const [month, setMonth] = useState(date.getMonth() + 1 + "");
-  const [day, setDay] = useState(date.getDate() + "");
+  const initYear = initDate.getFullYear();
+  const initMonth = adZero(initDate.getMonth() + 1);
+  const initDay = adZero(initDate.getDate());
+
+  const [year, setYear] = useState(initYear);
+  const [month, setMonth] = useState(initMonth);
+  const [day, setDay] = useState(initDay);
 
   const onChHandler = (e: any) => {
     const nam = e.target.name;
@@ -64,20 +71,17 @@ const IkdHistory = (props: any) => {
   let yillar = [];
   const sonYil = new Date().getFullYear();
   for (let i = sonYil - 15; i <= sonYil; i++) {
-    const si = i * 1 < 10 ? "0" + i : i;
-    yillar.push(si);
+    yillar.push(adZero(i));
   }
 
   let aylar = [];
   for (let i = 1; i <= 12; i++) {
-    const si = i * 1 < 10 ? "0" + i : i;
-    aylar.push(si);
+    aylar.push(adZero(i));
   }
 
   let gunler = [];
   for (let i = 1; i <= 31; i++) {
-    const si = i * 1 < 10 ? "0" + i : i;
-    gunler.push(si);
+    gunler.push(adZero(i));
   }
 
   return (
@@ -145,7 +149,13 @@ const IkdHistory = (props: any) => {
           </button>
         </div>
       </div>
-      <CustomTable {...props} />
+      {props.ikdHistory.length > 0 ? (
+        <CustomTable {...props} />
+      ) : (
+        <div className="text-center p-3">
+          <Loading isDark={props.isDark} width="19" />
+        </div>
+      )}
     </div>
   );
 };
