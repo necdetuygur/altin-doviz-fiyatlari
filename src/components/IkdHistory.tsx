@@ -71,7 +71,7 @@ const IkdHistory = (props: any) => {
   let yillar = [];
   const sonYil = new Date().getFullYear();
   for (let i = sonYil - 15; i <= sonYil; i++) {
-    yillar.push(adZero(i));
+    yillar.push(i);
   }
 
   let aylar = [];
