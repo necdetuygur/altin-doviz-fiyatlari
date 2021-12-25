@@ -25,7 +25,7 @@ const Header = (props: any) => {
     // eslint-disable-next-line
   }, []);
   return (
-    <div style={{ height: "33px" }}>
+    <div style={{ height: "45px" }}>
       <header
         className={
           (props.isDark ? "bg-dark text-light" : "bg-light text-dark") +
@@ -36,7 +36,7 @@ const Header = (props: any) => {
           <span>
             <button
               className={
-                "me-1 btn btn-sm btn-outline-" +
+                "m-1 btn btn-sm btn-outline-" +
                 (props.isDark ? "primary" : "dark")
               }
               onClick={() => {
@@ -48,7 +48,8 @@ const Header = (props: any) => {
 
             <button
               className={
-                "btn btn-sm btn-outline-" + (props.isDark ? "primary" : "dark")
+                "m-1 btn btn-sm btn-outline-" +
+                (props.isDark ? "primary" : "dark")
               }
               onClick={() => props.getGold(false)}
             >
@@ -58,7 +59,7 @@ const Header = (props: any) => {
           <span>
             <button
               className={
-                "me-1 btn btn-sm btn-outline-" +
+                "m-1 btn btn-sm btn-outline-" +
                 (props.isDark ? "primary" : "dark")
               }
               onClick={() => {
@@ -66,10 +67,12 @@ const Header = (props: any) => {
               }}
             >
               <i className="fa fa-pencil-square-o"></i>
+              {props.editFavs ? " Düzenleme Modunu Kapat" : ""}
             </button>
             <button
               className={
-                "btn btn-sm btn-outline-" + (props.isDark ? "primary" : "dark")
+                "m-1 btn btn-sm btn-outline-" +
+                (props.isDark ? "primary" : "dark")
               }
               onClick={() => {
                 props.toggleIsDark();
@@ -88,10 +91,11 @@ const Header = (props: any) => {
 };
 
 export default connect(
-  (state: { proMode: boolean; isDark: boolean }) => {
+  (state: { proMode: boolean; isDark: boolean; editFavs: boolean }) => {
     return {
       proMode: state.proMode,
       isDark: state.isDark,
+      editFavs: state.editFavs,
     };
   },
   {

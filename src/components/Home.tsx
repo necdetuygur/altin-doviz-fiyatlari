@@ -16,7 +16,7 @@ const App = (props: any) => {
   return (
     <>
       <div className="row">
-        {props.favs.length > 0 && (
+        {props.favs.length > 0 && !props.editFavs && (
           <div className="col-md-4">
             <Fav />
           </div>
