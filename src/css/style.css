@@ -11,10 +11,6 @@ body {
   padding: 0.5rem 0.5rem;
 }
 
-.modal-content {
-  background-color: transparent;
-}
-
 body,
 button,
 div,
@@ -34,7 +30,8 @@ td {
   background-color: #dbe1e9 !important;
 }
 
-.bg-light.card-body {
+.bg-light.card-body,
+.bg-light.modal-body {
   background-color: #e8ecf1 !important;
 }
 

@@ -22,7 +22,9 @@ const Modal = (props: any) => {
       >
         {props.modalTitle}
       </ModalHeader>
-      <ModalBody className="p-0">{props.modalBody}</ModalBody>
+      <ModalBody className={"p-0 " + (props.isDark ? "bg-dark" : "bg-light")}>
+        {props.modalBody}
+      </ModalBody>
       <ModalFooter
         className={props.isDark ? "bg-dark text-white" : "bg-light text-dark"}
       >
