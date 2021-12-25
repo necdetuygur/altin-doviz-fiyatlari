@@ -101,6 +101,14 @@ export const toggleIsDark = () => (dispatch: Dispatch) => {
 export const getIkdHistory =
   (isFirstRequest: boolean, date: string) => (dispatch: Dispatch) => {
     const baseUrl = getBaseUrl(isFirstRequest);
+
+    // Clear
+    dispatch({
+      type: "GET_IKD_HISTORY_SUCCESS",
+      payload: [],
+    });
+
+    // Fill
     axios.get(baseUrl + "ikd/" + date).then((r) =>
       dispatch({
         type: "GET_IKD_HISTORY_SUCCESS",
