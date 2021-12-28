@@ -85,7 +85,7 @@ const IkdHistory = (props: any) => {
   }
 
   return (
-    <div>
+    <div className="container-fluid">
       <div className="row p-1">
         <div className="col">
           Gün
@@ -149,13 +149,15 @@ const IkdHistory = (props: any) => {
           </button>
         </div>
       </div>
-      {props.ikdHistory.length > 0 ? (
-        <CustomTable {...props} />
-      ) : (
-        <div className="text-center p-3">
-          <Loading isDark={props.isDark} width="19" />
-        </div>
-      )}
+      <div className="p-1">
+        {props.ikdHistory.length > 0 ? (
+          <CustomTable {...props} />
+        ) : (
+          <div className="text-center p-3">
+            <Loading isDark={props.isDark} width="19" />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
