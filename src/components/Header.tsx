@@ -33,57 +33,52 @@ const Header = (props: any) => {
         }
       >
         <div className="d-flex justify-content-between">
-          <span>
-            <button
-              className={
-                "m-1 btn btn-sm btn-outline-" +
-                (props.isDark ? "primary" : "dark")
-              }
-              onClick={() => {
-                props.getGold(true);
-              }}
-            >
-              <i style={{ width: "16px" }} className="fa fa-refresh"></i>
-            </button>
-
-            <button
-              className={
-                "m-1 btn btn-sm btn-outline-" +
-                (props.isDark ? "primary" : "dark")
-              }
-              onClick={() => props.getGold(false)}
-            >
-              {tarih}
-            </button>
-          </span>
-          <span>
-            <button
-              className={
-                "m-1 btn btn-sm btn-outline-" +
-                (props.isDark ? "primary" : "dark")
-              }
-              onClick={() => {
-                props.toggleEditFavs();
-              }}
-            >
-              <i className="fa fa-pencil-square-o"></i>
-              {props.editFavs ? " Düzenleme Modunu Kapat" : ""}
-            </button>
-            <button
-              className={
-                "m-1 btn btn-sm btn-outline-" +
-                (props.isDark ? "primary" : "dark")
-              }
-              onClick={() => {
-                props.toggleIsDark();
-              }}
-            >
-              <i
-                style={{ width: "16px" }}
-                className={props.isDark ? "fa fa-moon-o" : "fa fa-sun-o"}
-              ></i>
-            </button>
-          </span>
+          <button
+            className={
+              "m-1 btn btn-sm btn-outline-" +
+              (props.isDark ? "primary" : "dark")
+            }
+            onClick={() => {
+              props.getGold(true);
+            }}
+          >
+            <i style={{ width: "16px" }} className="fa fa-refresh"></i>
+          </button>
+          <button
+            className={
+              "m-1 btn btn-sm btn-outline-" +
+              (props.isDark ? "primary" : "dark")
+            }
+            onClick={() => props.getGold(false)}
+          >
+            <small>{tarih}</small>
+          </button>
+          <button
+            className={
+              "m-1 btn btn-sm btn-outline-" +
+              (props.isDark ? "primary" : "dark")
+            }
+            onClick={() => {
+              props.toggleEditFavs();
+            }}
+          >
+            <i className="fa fa-pencil-square-o"></i>
+            {props.editFavs ? " Düzenleme Modunu Kapat" : ""}
+          </button>
+          <button
+            className={
+              "m-1 btn btn-sm btn-outline-" +
+              (props.isDark ? "primary" : "dark")
+            }
+            onClick={() => {
+              props.toggleIsDark();
+            }}
+          >
+            <i
+              style={{ width: "16px" }}
+              className={props.isDark ? "fa fa-moon-o" : "fa fa-sun-o"}
+            ></i>
+          </button>
         </div>
       </header>
     </div>
