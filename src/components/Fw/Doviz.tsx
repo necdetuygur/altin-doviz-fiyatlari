@@ -17,7 +17,12 @@ const FwDoviz = ({
 
   isDark: boolean;
 }) => (
-  <Card title="Döviz Fiyatları" icon="/img/doviz.png" isDark={isDark}>
+  <Card
+    title="Döviz Fiyatları"
+    icon="/img/doviz.png"
+    isDark={isDark}
+    isShare={true}
+  >
     <Table
       hover
       responsive

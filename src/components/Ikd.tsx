@@ -71,6 +71,7 @@ const Ikd = (props: any) => {
       title="İzmir Kuyumcular Odası"
       icon="/img/iko.png"
       isDark={props.isDark}
+      isShare={true}
       header={
         <button
           className="btn btn-sm btn-outline-primary"

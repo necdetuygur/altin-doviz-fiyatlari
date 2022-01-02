@@ -21,6 +21,7 @@ const FwAltin = ({
     title="Altın Fiyatları"
     icon="/img/apple-touch-icon-152x152.png"
     isDark={isDark}
+    isShare={true}
   >
     <Table
       hover

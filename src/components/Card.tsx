@@ -7,12 +7,14 @@ export default ({
   icon,
   isDark,
   header,
+  isShare,
 }: {
   title: string;
   children: any;
   icon?: string;
   isDark?: boolean;
   header?: any;
+  isShare?: boolean;
 }) => {
   const thisElement = useRef(null);
 
@@ -28,18 +30,20 @@ export default ({
         <span className={icon && "ms-2"}>{title}</span>
         <div className="float-end">
           {header}
-          <button
-            className="m-1 btn btn-outline-primary btn-sm"
-            onClick={() => {
-              const el = thisElement.current;
-              if (!el) {
-                throw new Error("el wasn't found");
-              }
-              onCapture(el);
-            }}
-          >
-            <i style={{ width: "16px" }} className="fa fa-share-alt"></i>
-          </button>
+          {isShare && (
+            <button
+              className="m-1 btn btn-outline-primary btn-sm"
+              onClick={() => {
+                const el = thisElement.current;
+                if (!el) {
+                  throw new Error("el wasn't found");
+                }
+                onCapture(el);
+              }}
+            >
+              <i style={{ width: "16px" }} className="fa fa-share-alt"></i>
+            </button>
+          )}
         </div>
       </div>
       <div className={"card-body p-0 " + (isDark ? "bg-dark" : "bg-light")}>
