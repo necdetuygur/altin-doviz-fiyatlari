@@ -19,7 +19,7 @@ const Home = (props: any) => {
     if (min != 0) {
       refreshTimer = setInterval(() => {
         props.getGold(true);
-      }, min * 1e3);
+      }, min * 6e4);
     }
   };
 
