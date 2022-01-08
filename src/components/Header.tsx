@@ -62,7 +62,7 @@ const Header = (props: any) => {
               props.toggleEditFavs();
             }}
           >
-            <i className="fa fa-pencil-square-o"></i>
+            <i className="fa fa-sliders"></i>
             {props.editFavs ? " Düzenleme Modunu Kapat" : ""}
           </button>
           <button
