@@ -25,7 +25,7 @@ const Header = (props: any) => {
     // eslint-disable-next-line
   }, []);
   return (
-    <div style={{ height: "45px" }}>
+    <div style={{ height: "60px" }}>
       <header
         className={
           (props.isDark ? "bg-dark text-light" : "bg-light text-dark") +
