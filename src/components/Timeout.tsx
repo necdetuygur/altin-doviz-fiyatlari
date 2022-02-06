@@ -9,7 +9,7 @@ const Timeout = (props: any) => {
     setTimerFinish(false);
     const timer = setTimeout(() => {
       setTimerFinish(true);
-    }, 3e3);
+    }, 7e3);
     return () => {
       clearTimeout(timer);
     };

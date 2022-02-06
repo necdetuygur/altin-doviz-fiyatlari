@@ -68,9 +68,10 @@ const Ikd = (props: any) => {
   };
   return (
     <Card
-      title="İzmir Kuyumcular Odası Altın Fiyatları"
-      icon="/img/apple-touch-icon-152x152.png"
+      title="İzmir Kuyumcular Odası"
+      icon="/img/iko.png"
       isDark={props.isDark}
+      isShare={true}
       header={
         <button
           className="btn btn-sm btn-outline-primary"
