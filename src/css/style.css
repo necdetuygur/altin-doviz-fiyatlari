@@ -53,22 +53,6 @@ td {
   background-color: #e8ecf1 !important;
 }
 
-.table > :not(caption) > * > * {
-  padding: 0.25rem !important;
-}
-
-.btn-sm {
-  padding: 0.12rem 0.25rem !important;
-}
-
-.btn {
-  line-height: 0.5 !important;
-}
-
-.card-header {
-  padding: 0.25rem 0.25rem !important;
-}
-
 div {
   overflow: hidden;
 }
