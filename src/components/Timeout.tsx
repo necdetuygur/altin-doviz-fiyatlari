@@ -9,7 +9,7 @@ const Timeout = (props: any) => {
     setTimerFinish(false);
     const timer = setTimeout(() => {
       setTimerFinish(true);
-    }, 3e3);
+    }, 7e3);
     return () => {
       clearTimeout(timer);
     };
@@ -18,17 +18,26 @@ const Timeout = (props: any) => {
   return (
     <>
       {timerFinish && "ikd" in props.gold && props.gold.ikd === null && (
-        <Card title="Görünüşe göre fiyatlar getirilemedi, son alınan fiyatlar gösterilsin mi?">
+        <Card
+          title="Görünüşe göre fiyatlar getirilemedi, son alınan fiyatlar gösterilsin mi?"
+          isDark={props.isDark}
+        >
           <div className="text-center p-2">
             <button
-              className="mx-1 btn btn-sm btn-outline-primary"
+              className={
+                "mx-1 btn btn-sm btn-outline-" +
+                (props.isDark ? "primary" : "dark")
+              }
               onClick={() => props.loadOldGold()}
             >
               Evet
             </button>
             <button
-              className="mx-1 btn btn-sm btn-outline-primary"
-              onClick={() => props.getGold()}
+              className={
+                "mx-1 btn btn-sm btn-outline-" +
+                (props.isDark ? "primary" : "dark")
+              }
+              onClick={() => props.getGold(false)}
             >
               Tekrar Dene
             </button>
@@ -40,9 +49,10 @@ const Timeout = (props: any) => {
 };
 
 export default connect(
-  (state: { gold: Object }) => {
+  (state: { gold: Object; isDark: boolean }) => {
     return {
       gold: state.gold,
+      isDark: state.isDark,
     };
   },
   { getGold, loadOldGold }
