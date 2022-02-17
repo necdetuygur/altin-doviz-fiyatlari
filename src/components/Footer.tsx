@@ -97,7 +97,7 @@ const Footer = ({
             data-color-scheme="no-preference: dark; light: dark; dark: dark;"
             data-size="large"
           >
-            GitHub
+            Kaynak Kodu
           </GitHubButton>
         </div>
       </footer>
