@@ -9,7 +9,8 @@ body {
 
 .card,
 .btn,
-.badge {
+.badge,
+.form-select {
   border-radius: 5px !important;
 }
 
