@@ -14,7 +14,7 @@ const Modal = (props: any) => {
       toggle={modalToggle}
       isOpen={props.modalOpen}
       className={props.isDark ? "bg-dark text-white" : "bg-light text-dark"}
-      fullscreen="lg"
+      size="lg"
     >
       <ModalHeader
         toggle={modalToggle}
