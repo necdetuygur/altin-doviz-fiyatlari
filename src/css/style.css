@@ -11,7 +11,7 @@ body {
 .btn,
 .badge,
 .form-select {
-  border-radius: 3px !important;
+  border-radius: 5px !important;
 }
 
 .card-header {
