@@ -9,6 +9,7 @@ import {
   setProMode,
 } from "../actions";
 import { useState } from "react";
+import SorumlulukReddiBeyani from "./SorumlulukReddiBeyani";
 
 const Footer = ({
   setModalOpen,
@@ -33,9 +34,22 @@ const Footer = ({
       setProModeCounter(proModeCounter - 1);
     }
   };
+  const srbModal = () => {
+    setModalOpen(true);
+    setModalTitle(<span>Sorumluluk Reddi Beyanı</span>);
+    setModalBody(<SorumlulukReddiBeyani />);
+  };
 
   return (
     <div style={{ height: "90px" }}>
+      <button
+        className="btn btn-link"
+        onClick={() => {
+          srbModal();
+        }}
+      >
+        Sorumluluk Reddi Beyanı
+      </button>
       <footer
         className={
           (isDark ? "bg-dark text-light" : "bg-light text-dark") +
@@ -97,7 +111,7 @@ const Footer = ({
             data-color-scheme="no-preference: dark; light: dark; dark: dark;"
             data-size="large"
           >
-            GitHub
+            Kaynak Kodu
           </GitHubButton>
         </div>
       </footer>
