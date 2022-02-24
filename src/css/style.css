@@ -16,14 +16,14 @@ body {
 
 .card-header {
   padding: 0.5rem 0.5rem;
-  border-top-left-radius: 5px !important;
+  border-top-left-radius: 4px !important;
   border-top-right-radius: 4px !important;
 }
 
 .card-footer,
 .card-body {
-  border-bottom-left-radius: 5px !important;
-  border-bottom-right-radius: 5px !important;
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
 }
 
 body,
