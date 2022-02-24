@@ -11,13 +11,13 @@ body {
 .btn,
 .badge,
 .form-select {
-  border-radius: 5px !important;
+  border-radius: 4px !important;
 }
 
 .card-header {
   padding: 0.5rem 0.5rem;
   border-top-left-radius: 5px !important;
-  border-top-right-radius: 5px !important;
+  border-top-right-radius: 4px !important;
 }
 
 .card-footer,
