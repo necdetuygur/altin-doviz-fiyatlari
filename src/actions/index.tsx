@@ -21,6 +21,7 @@ export const getGold = (isFirstRequest: boolean) => (dispatch: Dispatch) => {
     "fw/doviz/usd",
     "fw/doviz/eur",
     "fw/doviz/gbp",
+    "namaz",
   ];
   paths.forEach((path) => {
     // Clear
@@ -28,7 +29,7 @@ export const getGold = (isFirstRequest: boolean) => (dispatch: Dispatch) => {
       type: "GET_GOLD_SUCCESS",
       payload: {
         data: null,
-        path: path === "ikd" ? path : path.split("/")[2],
+        path: path === "ikd" || path === "namaz" ? path : path.split("/")[2],
       },
     });
 
@@ -38,7 +39,7 @@ export const getGold = (isFirstRequest: boolean) => (dispatch: Dispatch) => {
         type: "GET_GOLD_SUCCESS",
         payload: {
           data: r.data,
-          path: path === "ikd" ? path : path.split("/")[2],
+          path: path === "ikd" || path === "namaz" ? path : path.split("/")[2],
         },
       })
     );

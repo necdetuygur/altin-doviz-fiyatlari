@@ -4,6 +4,7 @@ import Card from "./Card";
 import Altin from "./Fw/Altin";
 import Doviz from "./Fw/Doviz";
 import Ikd from "./Ikd";
+import Namaz from "./Namaz";
 import Fav from "./Fav";
 import { getGold, toggleIsDark } from "../actions";
 let refreshTimer: any = null;
@@ -85,6 +86,9 @@ const Home = (props: any) => {
         </div>
         <div className="col-md-4">
           <Ikd data={props.gold.ikd} isDark={props.isDark} />
+        </div>
+        <div className="col-md-4">
+          <Namaz data={props.gold.namaz} isDark={props.isDark} />
         </div>
       </div>
     </>
