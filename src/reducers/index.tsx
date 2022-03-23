@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   proMode: false,
   favs: JSON.parse(localStorage.getItem("favs") || "[]"),
   editFavs: false,
-  isDark: localStorage.getItem("isDark") === "1" || false,
+  isDark: !(localStorage.getItem("isDark") === "1" || false), // Default dark
   ikdHistory: [],
 };
 
