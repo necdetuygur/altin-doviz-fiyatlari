@@ -15,11 +15,11 @@ footer,
 table,
 tr,
 td {
-  -webkit-transition: background-color 99ms linear;
-  -moz-transition: background-color 99ms linear;
-  -o-transition: background-color 99ms linear;
-  -ms-transition: background-color 99ms linear;
-  transition: background-color 99ms linear;
+  -webkit-transition: background-color 333ms linear;
+  -moz-transition: background-color 333ms linear;
+  -o-transition: background-color 333ms linear;
+  -ms-transition: background-color 333ms linear;
+  transition: background-color 333ms linear;
 }
 
 .bg-light.card-header {
