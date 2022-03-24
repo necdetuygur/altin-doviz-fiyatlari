@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/altin-doviz-fiyatlari/static/css/main.04abb0bc.chunk.css",
-    "main.js": "/altin-doviz-fiyatlari/static/js/main.dd2bf580.chunk.js",
+    "main.js": "/altin-doviz-fiyatlari/static/js/main.32a30a07.chunk.js",
     "runtime-main.js": "/altin-doviz-fiyatlari/static/js/runtime-main.e277b3a0.js",
     "static/css/2.3804ab61.chunk.css": "/altin-doviz-fiyatlari/static/css/2.3804ab61.chunk.css",
     "static/js/2.c8c158bb.chunk.js": "/altin-doviz-fiyatlari/static/js/2.c8c158bb.chunk.js",
@@ -16,6 +16,6 @@
     "static/css/2.3804ab61.chunk.css",
     "static/js/2.c8c158bb.chunk.js",
     "static/css/main.04abb0bc.chunk.css",
-    "static/js/main.dd2bf580.chunk.js"
+    "static/js/main.32a30a07.chunk.js"
   ]
 }
