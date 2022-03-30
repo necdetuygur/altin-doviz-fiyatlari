@@ -14,13 +14,13 @@ export const getGold = (isFirstRequest: boolean) => (dispatch: Dispatch) => {
   const baseUrl = getBaseUrl(isFirstRequest);
   const paths = [
     "ikd",
-    "fw/altin/gram",
-    "fw/altin/ceyrek",
-    "fw/altin/yarim",
-    "fw/altin/tam",
-    "fw/doviz/usd",
-    "fw/doviz/eur",
-    "fw/doviz/gbp",
+    // "fw/altin/gram",
+    // "fw/altin/ceyrek",
+    // "fw/altin/yarim",
+    // "fw/altin/tam",
+    // "fw/doviz/usd",
+    // "fw/doviz/eur",
+    // "fw/doviz/gbp",
     "namaz",
   ];
   paths.forEach((path) => {
