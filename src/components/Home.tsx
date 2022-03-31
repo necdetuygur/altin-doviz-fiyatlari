@@ -70,7 +70,7 @@ const Home = (props: any) => {
             <Fav />
           </div>
         )}
-        {/* <div className="col-md-4">
+        <div className="col-md-4">
           <Altin
             {...props.gold}
             editFavs={props.editFavs}
@@ -83,7 +83,7 @@ const Home = (props: any) => {
             editFavs={props.editFavs}
             isDark={props.isDark}
           />
-        </div> */}
+        </div>
         <div className="col-md-4">
           <Ikd data={props.gold.ikd} isDark={props.isDark} />
         </div>
