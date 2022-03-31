@@ -55,7 +55,12 @@ const CustomTable = (props: any) => {
 
 const Namaz = (props: any) => {
   return (
-    <Card title="İzmir Namaz Vakitleri" isDark={props.isDark} isShare={true}>
+    <Card
+      title="İzmir Namaz Vakitleri"
+      isDark={props.isDark}
+      isShare={true}
+      icon="/img/namaz.png"
+    >
       {props.data ? (
         <CustomTable {...props} modalOpened={false} />
       ) : (
