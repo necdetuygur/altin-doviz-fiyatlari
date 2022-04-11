@@ -63,14 +63,12 @@ const CustomTable = (props: any) => {
           </tr>
           <tr onClick={() => modalOpen()}>
             <td colSpan={2}>
-              <h5>
-                İftara Ne Kadar Kaldı?
-                <span className="float-end">
-                  {props.data && props.data.Aksam && (
-                    <Countdown date={TimeGen(props.data.Aksam)} />
-                  )}
-                </span>
-              </h5>
+              İftara Ne Kadar Kaldı?
+              <span className="float-end">
+                {props.data && props.data.Aksam && (
+                  <Countdown date={TimeGen(props.data.Aksam)} />
+                )}
+              </span>
             </td>
           </tr>
         </tbody>
