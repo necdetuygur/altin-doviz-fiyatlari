@@ -2,7 +2,21 @@ import Card from "./Card";
 import Loading from "./Loading";
 import { Table } from "reactstrap";
 import { connect } from "react-redux";
+import Countdown from "react-countdown";
 import { setModalOpen, setModalTitle, setModalBody } from "../actions";
+
+const TimeGen = (time: string) => {
+  return new Date(
+    new Date().getFullYear() +
+      "-" +
+      (new Date().getMonth() + 1) +
+      "-" +
+      new Date().getDate() +
+      " " +
+      time +
+      ":00"
+  );
+};
 
 const CustomTable = (props: any) => {
   const modalOpen = () => {
@@ -46,6 +60,18 @@ const CustomTable = (props: any) => {
           <tr onClick={() => modalOpen()}>
             <td>Yatsı</td>
             <td className="text-end">{props.data.Yatsi}</td>
+          </tr>
+          <tr onClick={() => modalOpen()}>
+            <td colSpan={2}>
+              <h5>
+                İftara Ne Kadar Kaldı?
+                <span className="float-end">
+                  {props.data && props.data.Aksam && (
+                    <Countdown date={TimeGen(props.data.Aksam)} />
+                  )}
+                </span>
+              </h5>
+            </td>
           </tr>
         </tbody>
       )}
