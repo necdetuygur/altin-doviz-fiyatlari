@@ -6,7 +6,13 @@ const INITIAL_STATE = {
   proMode: false,
   favs: JSON.parse(localStorage.getItem("favs") || "[]"),
   editFavs: false,
-  isDark: localStorage.getItem("isDark") === "1" || false,
+  isDark:
+    localStorage.getItem("isDark") === null
+      ? (function () {
+          localStorage.setItem("isDark", "1");
+          return true;
+        })()
+      : localStorage.getItem("isDark") === "1" || false,
   ikdHistory: [],
 };
 
