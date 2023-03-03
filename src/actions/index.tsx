@@ -1,17 +1,12 @@
 import axios from "axios";
 import { Dispatch } from "redux";
 
-const getBaseUrl = (isFirstRequest: boolean) => {
-  if (isFirstRequest) {
-    let day = new Date().getDate();
-    day = day > 17 ? day - 17 : day;
-    return "https://thegold" + day + ".herokuapp.com/";
-  }
-  return "https://thegold" + ~~(Math.random() * 17 + 1) + ".herokuapp.com/";
+const getBaseUrl = () => {
+  return "https://g7vercel.vercel.app/";
 };
 
-export const getGold = (isFirstRequest: boolean) => (dispatch: Dispatch) => {
-  const baseUrl = getBaseUrl(isFirstRequest);
+export const getGold = () => (dispatch: Dispatch) => {
+  const baseUrl = getBaseUrl();
   const paths = [
     "ikd",
     "fw/altin/gram",
@@ -99,21 +94,20 @@ export const toggleIsDark = () => (dispatch: Dispatch) => {
   });
 };
 
-export const getIkdHistory =
-  (isFirstRequest: boolean, date: string) => (dispatch: Dispatch) => {
-    const baseUrl = getBaseUrl(isFirstRequest);
+export const getIkdHistory = (date: string) => (dispatch: Dispatch) => {
+  const baseUrl = getBaseUrl();
 
-    // Clear
+  // Clear
+  dispatch({
+    type: "GET_IKD_HISTORY_SUCCESS",
+    payload: [],
+  });
+
+  // Fill
+  axios.get(baseUrl + "ikd/" + date).then((r) =>
     dispatch({
       type: "GET_IKD_HISTORY_SUCCESS",
-      payload: [],
-    });
-
-    // Fill
-    axios.get(baseUrl + "ikd/" + date).then((r) =>
-      dispatch({
-        type: "GET_IKD_HISTORY_SUCCESS",
-        payload: r.data,
-      })
-    );
-  };
+      payload: r.data,
+    })
+  );
+};
