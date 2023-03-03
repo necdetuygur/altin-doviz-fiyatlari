@@ -1,20 +1,21 @@
 {
   "files": {
     "main.css": "/altin-doviz-fiyatlari/static/css/main.a7be1dfa.chunk.css",
-    "main.js": "/altin-doviz-fiyatlari/static/js/main.87e04330.chunk.js",
-    "runtime-main.js": "/altin-doviz-fiyatlari/static/js/runtime-main.e277b3a0.js",
+    "main.js": "/altin-doviz-fiyatlari/static/js/main.a089620a.chunk.js",
+    "runtime-main.js": "/altin-doviz-fiyatlari/static/js/runtime-main.710f686b.js",
     "static/css/2.3804ab61.chunk.css": "/altin-doviz-fiyatlari/static/css/2.3804ab61.chunk.css",
-    "static/js/2.b52c5530.chunk.js": "/altin-doviz-fiyatlari/static/js/2.b52c5530.chunk.js",
+    "static/js/2.40a41317.chunk.js": "/altin-doviz-fiyatlari/static/js/2.40a41317.chunk.js",
     "index.html": "/altin-doviz-fiyatlari/index.html",
     "service-worker.js": "/altin-doviz-fiyatlari/service-worker.js",
-    "static/js/2.b52c5530.chunk.js.LICENSE.txt": "/altin-doviz-fiyatlari/static/js/2.b52c5530.chunk.js.LICENSE.txt",
+    "service-worker.js.LICENSE.txt": "/altin-doviz-fiyatlari/service-worker.js.LICENSE.txt",
+    "static/js/2.40a41317.chunk.js.LICENSE.txt": "/altin-doviz-fiyatlari/static/js/2.40a41317.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/altin-doviz-fiyatlari/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.e277b3a0.js",
+    "static/js/runtime-main.710f686b.js",
     "static/css/2.3804ab61.chunk.css",
-    "static/js/2.b52c5530.chunk.js",
+    "static/js/2.40a41317.chunk.js",
     "static/css/main.a7be1dfa.chunk.css",
-    "static/js/main.87e04330.chunk.js"
+    "static/js/main.a089620a.chunk.js"
   ]
 }
