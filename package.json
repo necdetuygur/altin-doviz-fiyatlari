@@ -34,9 +34,9 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts --openssl-legacy-provider test --env=jsdom",
+    "eject": "react-scripts --openssl-legacy-provider eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
