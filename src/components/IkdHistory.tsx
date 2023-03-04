@@ -64,7 +64,7 @@ const IkdHistory = (props: any) => {
   };
 
   useEffect(() => {
-    props.getIkdHistory(true, `${day}.${month}.${year}`);
+    props.getIkdHistory(`${day}.${month}.${year}`);
     // eslint-disable-next-line
   }, []);
 
@@ -141,7 +141,7 @@ const IkdHistory = (props: any) => {
           <button
             className="btn btn-sm btn-primary w-100"
             onClick={() => {
-              props.getIkdHistory(true, `${day}.${month}.${year}`);
+              props.getIkdHistory(`${day}.${month}.${year}`);
             }}
           >
             <i className="fa fa-eye pe-2"></i>
